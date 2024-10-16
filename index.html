@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pushcomz DoubleTake Reference</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/AIxStudio/css/reset.css">
+  <link rel="stylesheet" href="/AIxStudio/css/font.css">
+  <link rel="stylesheet" href="/AIxStudio/css/common.css">
+  <link rel="stylesheet" href="/AIxStudio/css/main.css">
+  <!-- CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script src="/AIxStudio/js/script.js"></script>
+</head>
+<body>
+  <div class="common_wrap">
+    <main id="content" class="common_container main_page" role="main">
+      <section class="common_section section_framer">
+        <div class="framer">
+          <!-- prompt -->
+          <div class="framer_prompt_area">
+            <div class="framer_prompt_box">
+              <textarea name="framer_prompt_group" id="framer_prompt_detail" class="framer_prompt_textarea" placeholder="Start taking..."></textarea>
+              <button class="btn_framer_prompt">Take a Shot</button>
+            </div>
+            <button class="btn_framer_setting_expanded"></button>
+          </div>
+          <!-- setting -->
+          <div class="framer_setting_area">
+            <ul class="framer_setting_list">
+              <li class="framer_setting_item">
+                <div class="framer_setting_box input_box">
+                  <label for="setting_subject" class="framer_setting_label">subject</label>
+                  <input type="text" class="framer_setting_input" id="setting_subject" name="setting_subject_group" placeholder="[SUBJECT], [IMPORTANT FEATURE], [MORE DETAILS], [POSE OR ACTION]">
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_background" class="framer_setting_label">setting background</label>
+                  <input type="text" class="framer_setting_input" id="setting_background" name="setting_background_group" placeholder="Enter setting background">
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_style" class="framer_setting_label">style</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_style" name="setting_style_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_framing" class="framer_setting_label">framing</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_framing" name="setting_framing_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_lighting" class="framer_setting_label">lighting</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_lighting" name="setting_lighting_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_camera_angle" class="framer_setting_label">camera angle</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_camera_angle" name="setting_camera_angle_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_camera_properties" class="framer_setting_label">camera properties</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_camera_properties" name="setting_camera_properties_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_film_types" class="framer_setting_label">film types</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_film_types" name="setting_film_types_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_lenses" class="framer_setting_label">lenses</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_lenses" name="setting_lenses_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_filters_effects" class="framer_setting_label">filters effects</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_filters_effects" name="setting_filters_effects_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+              <li class="framer_setting_item">
+                <div class="framer_setting_box">
+                  <label for="setting_photographers" class="framer_setting_label">photographers</label>
+                  <div class="select_box">
+                    <input type="text" class="framer_setting_input" id="setting_photographers" name="setting_photographers_group" placeholder="">
+                    <button class="btn_setting_select">select</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <!-- style -->
+  <div class="ly_pop_wrap style">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">style</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">abstract</h3>
+              <p class="img_desc">
+                Abstract photography captures imaginative non- representational subjects creatively using visual elements like color and texture. For strong abstract images in Stable Diffusion weight the tag at (abstract:1.4).
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">analogue</h3>
+              <p class="img_desc">
+                Analogue photography uses film and traditional developing processes to achieve a classic vintage look with grain, fading discoloration, light leaks, and textured imperfections absent in slick digital images. Useful for a generic vintage look.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">beauty</h3>
+              <p class="img_desc">
+                Beauty photography involves capturing elegant, stylized portraits of models to highlight and celebrate cosmetics glamor, and aesthetically pleasing subjects in a romanticized way. Combine with studio themed lighting prompts.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">candid</h3>
+              <p class="img_desc">
+                Candid photography involves taking spontaneous, unposed shots of people behaving naturally in public settings without their knowledge to capture authentic moments. Add actions to your prompt and a public setting to make this work well.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_05.jpg" alt="" class="picture_img">
+              <h3 class="img_title">documentary photography</h3>
+              <p class="img_desc">
+                Documentary photography captures real world subjects environments, events, and people in their authentic contexts to provide visual insight into culturally significant topics. This can create very realistic skin & is effective in black and white.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_06.jpg" alt="" class="picture_img">
+              <h3 class="img_title">glamour photography</h3>
+              <p class="img_desc">
+                Glamour photography involves stylized, idealized portraits of models showcasing cosmetics, seductive poses, and sensual allure to convey an aspirational image of beauty. You may want to use NSFW in your negative prompts or this will create nudes.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_07.jpg" alt="" class="picture_img">
+              <h3 class="img_title">high fashion photography</h3>
+              <p class="img_desc">
+                High fashion photography promotes cutting-edge designer clothing and accessories using inventive, avant garde artistic approaches, striking poses, and models to showcase an aspirational elegance. Also use catwalk as a setting tag.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_08.jpg" alt="" class="picture_img">
+              <h3 class="img_title">instant photo</h3>
+              <p class="img_desc">
+                Instant photos have a retro, vintage Polaroid look with faded colors, uneven exposures, imperfections, and blotchy shadows created immediately when taken without development. Weight the tag at (instant photo:1.4). Add soft focus & a film type tag.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_09.jpg" alt="" class="picture_img">
+              <h3 class="img_title">large format</h3>
+              <p class="img_desc">
+                Large format photography uses cameras with film sizes of 4x5 inches or larger to achieve incredibly high resolution, sharpness fine grain, and detailed photos suitable for large prints. this tag gives sharp images but with an organic film grain.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_10.jpg" alt="" class="picture_img">
+              <h3 class="img_title">lifestyle photography</h3>
+              <p class="img_desc">
+                Lifestyle photography involves capturing candid, documentary- style shots of people, in everyday home or domestic situations to convey personality and meaningful moments. Use with action and setting tags to create stock photo style images.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_11.jpg" alt="" class="picture_img">
+              <h3 class="img_title">modernist</h3>
+              <p class="img_desc">
+                Modernist photography is characterized by simple, geometric compositions, minimalism, & emphasis on shape. In Stable Diffusion, however, it creates a 1960’s aesthetic more in line with Modernist architecture.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_12.jpg" alt="" class="picture_img">
+              <h3 class="img_title">paparazzi</h3>
+              <p class="img_desc">
+                Paparazzi photography involves candid shots of celebrities going about daily life without permission, often dangerously or unethically, to capture scandalous, sensationalist, or intimate images.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_13.jpg" alt="" class="picture_img">
+              <h3 class="img_title">pictorialist style</h3>
+              <p class="img_desc">
+                Pictorialist photography from the 1800’s mimics impressionist paintings using soft focus, diffused lighting, to make dreamlike romanticized images. Add soft focus, dreamy haze & black and white tags to enhance. Use a weight of (pictorialist:1.5).
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_14.jpg" alt="" class="picture_img">
+              <h3 class="img_title">polaroid</h3>
+              <p class="img_desc">
+                Polaroid photography uses instant film that develops prints immediately, producing retro-style images with faded color uneven exposures, shadows, and imperfections absent in modern digital photos. Unlike instant this tag has softer images.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_15.jpg" alt="" class="picture_img">
+              <h3 class="img_title">pinhole photography</h3>
+              <p class="img_desc">
+                Pinhole photography uses a camera without a lens that has a tiny pinhole aperture, creating soft focus dreamlike images with nearly infinite depth of field but requiring long exposures.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_16.jpg" alt="" class="picture_img">
+              <h3 class="img_title">street fashion photography</h3>
+              <p class="img_desc">
+                Street fashion photography captures candid shots of stylish real people in urban settings wearing creative street style outfits and designs outside of studios or runways.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_17.jpg" alt="" class="picture_img">
+              <h3 class="img_title">surrealist</h3>
+              <p class="img_desc">
+                Surrealist photography creates fantastical, dreamlike images using imaginative composites, collages, darkroom manipulations, and unusual juxtapositions to convey subconscious realities. Needs a weight of (surrealist photo:1.5).
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/style_18.jpg" alt="" class="picture_img">
+              <h3 class="img_title">tintype</h3>
+              <p class="img_desc">
+                Tintype photography involves capturing direct positive images onto lacquered iron plates, producing antique looking photos with high contrast, dark muted tones, and ghostly faded faces. High weights this will always make subjects look old fashioned.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- framing -->
+  <div class="ly_pop_wrap framing">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">framing</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/framing_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">close up on face</h3>
+              <p class="img_desc">
+                Specifying “close up on face” in a portrait prompt frames tight on facial features to reveal emotion, identity, and fine details. Use it to highlight expressions and direct focus exclusively on the subject.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/framing_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">full body</h3>
+              <p class="img_desc">
+                Specifying “full body” frames the entire subject to showcase action, attire, and context. Use it for dynamic poses, to emphasize a key outfit or to establish a scene.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/framing_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">head shot</h3>
+              <p class="img_desc">
+                Head shots tightly frame the face to spotlight identity, facial features, and expressive emotions. Use “head shot” to focus attention on nuanced details of the face and head. This framing includes more of the hair and shoulders.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/framing_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">upper body</h3>
+              <p class="img_desc">
+                Upper body framing shows the subject from chest or waist up focusing on pose, expression, clothing, and hand gestures while still providing some environmental context.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- lighting -->
+  <div class="ly_pop_wrap">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">lighting</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">bounced lighting</h3>
+              <p class="img_desc">
+                Bounced lighting refers to soft, diffuse illumination created by reflecting light off surrounding surfaces like walls and ceilings rather than directly lighting the subject from the source. This can be prompted by specifying “soft bounced lighting”.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">candlelight</h3>
+              <p class="img_desc">
+                Candlelight produces a warm, intimate, flickering glow with subtle dancing shadows and highlights that can be prompted by specifying a scene lit solely by candles. This can be combined with another lighting style called chiaroscuro.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">chiaroscuro</h3>
+              <p class="img_desc">
+                Chiaroscuro lighting refers to high contrast illumination with strong shadows juxtaposed against bright highlights, which creates a dramatic, textured look. In Stable Diffusion this can create a photorealistic Renaissance painting style.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">cinematic lighting</h3>
+              <p class="img_desc">
+                Cinematic lighting uses dramatic high-contrast keys, backlights and rims to create moody Hollywood style portrait lighting effects that can be prompted in Stable Diffusion by specifying “cinematic lighting” with strong side key lights or rim lighting.Upper body framing shows the subject from chest or waist up focusing on pose, expression, clothing, and hand gestures while still providing some environmental context.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_05.jpg" alt="" class="picture_img">
+              <h3 class="img_title">soft diffused lighting</h3>
+              <p class="img_desc">
+                Diffused lighting is soft, low contrast illumination from a large diffusing light source that creates gentle shadows and can be prompted in Stable Diffusion by specifying a scene uses “soft diffused lighting” to create a smooth, even lighting effect.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_06.jpg" alt="" class="picture_img">
+              <h3 class="img_title">edge lighting</h3>
+              <p class="img_desc">
+                Edge lighting is side lighting placed behind a subject to produce a bright outlined “rim” effect around their silhouette which can be prompted in Stable Diffusion by specifying “dramatic edge lighting” to make the subject vividly stand out.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_07.jpg" alt="" class="picture_img">
+              <h3 class="img_title">fill lighting</h3>
+              <p class="img_desc">
+                Fill lighting provides secondary illumination from the opposite side of the key light to soften shadows and balance out contrast which can be prompted in Stable Diffusion by specifying “soft fill lighting” to gently brighten shaded areas of a subject.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_08.jpg" alt="" class="picture_img">
+              <h3 class="img_title">flash photography</h3>
+              <p class="img_desc">
+                This utilizes a burst of bright, instant light that can create a sharp yet stylistic look, which can be prompted in Stable Diffusion with “direct flash photography” or “harsh flash lighting”. Too high a weight will add the flash symbol to everything! So be warned.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_09.jpg" alt="" class="picture_img">
+              <h3 class="img_title">god rays</h3>
+              <p class="img_desc">
+                God rays lighting creates dramatic beams of light streaming through particulate in the air which can be prompted by specifying “radiant god rays” or “light beams streaming through haze” to generate an atmospheric, mystical lighting effect.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_10.jpg" alt="" class="picture_img">
+              <h3 class="img_title">golden hour</h3>
+              <p class="img_desc">
+                Golden hour lighting refers to the warm, reddish hue and softened shadows created by the low angle of the sun at sunrise or sunset, which can be prompted by specifying “warm golden hour lighting” to generate a romantic, magical ambience.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_11.jpg" alt="" class="picture_img">
+              <h3 class="img_title">hard light</h3>
+              <p class="img_desc">
+                Hard lighting refers to harsh, undiffused illumination that creates strong shadows and high contrast, which can be prompted by specifying a scene uses (hard lighting:1.4) to portray bold shapes and textures and a dramatic mood.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_12.jpg" alt="" class="picture_img">
+              <h3 class="img_title">high key lighting</h3>
+              <p class="img_desc">
+                High key studio lighting employs bright, even illumination against a white backdrop to create a clean, modern look with some contrast but minimal shadows in fashion and editorial photography. Prompted by specifying “high key brightly lit”
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_13.jpg" alt="" class="picture_img">
+              <h3 class="img_title">low key lighting</h3>
+              <p class="img_desc">
+                Low key lighting uses dramatic, moody illumination with shadows and dark, muted tones, typically prompted by specifying a “low key lighting” scene with minimal fill lighting to create higher contrast intrigue and a mysterious mood.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_14.jpg" alt="" class="picture_img">
+              <h3 class="img_title">natural lighting</h3>
+              <p class="img_desc">
+                Natural lighting utilizes the sun or other ambient light sources to gently illuminate a scene and can be prompted by specifying “soft natural lighting” to create a realistic, organic mood and avoid the artificial look of studio lighting in one sentence.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_15.jpg" alt="" class="picture_img">
+              <h3 class="img_title">neon lighting</h3>
+              <p class="img_desc">
+                Neon lighting employs the vibrant, saturated colors of neon tube lights which can create a lively, futuristic, or stylized look typically prompted by specifying a scene uses “bright neon lighting” to generate a colorful, artificial lighting effect.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_16.jpg" alt="" class="picture_img">
+              <h3 class="img_title">overcast lighting</h3>
+              <p class="img_desc">
+                Overcast lighting refers to the soft, even, low contrast illumination on cloudy days, which can be prompted by specifying “overcast flat lighting” to simulate the muted shadows and tone of an overcast sky.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_17.jpg" alt="" class="picture_img">
+              <h3 class="img_title">rim lighting</h3>
+              <p class="img_desc">
+                Rim lighting is a strong back light placed behind a subject to create an outlined “rim” or glow effect around their silhouette typically prompted by specifying “dramatic rim lighting” to make the subject stand out vividly from the background
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_18.jpg" alt="" class="picture_img">
+              <h3 class="img_title">shadow play</h3>
+              <p class="img_desc">
+                Shadow play lighting creates dramatic results by strategically placing shadows and shafts of light, typically prompted by specifying “creative shadow play” to generate high contrast and visual intrigue in a scene.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_19.jpg" alt="" class="picture_img">
+              <h3 class="img_title">silhouette lighting</h3>
+              <p class="img_desc">
+                Creates a silhouette effect by placing the subject or object in front of a bright backlight, usually prompted by specifying “silhouetted against the bright sky/window/light” to generate a bold darkened subject profiled against the background.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lighting_20.jpg" alt="" class="picture_img">
+              <h3 class="img_title">soft lighting</h3>
+              <p class="img_desc">
+                Soft lighting minimizes shadows by using a large, diffused light source and can be prompted in Stable Diffusion by specifying “soft lighting” to create a gentle, smooth illumination that reduces texture and contrast
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- camera angle -->
+  <div class="ly_pop_wrap">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">camera angle</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_angle_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">dutch angle</h3>
+              <p class="img_desc">
+                A Dutch angle refers to tilting the camera diagonally to create a skewed perspective, typically prompted in Stable Diffusion by specifying “shot from a Dutch angle” to make the composition appear more dynamic or convey unease. Use with high weight.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_angle_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">from above/high angle</h3>
+              <p class="img_desc">
+                Specifying a “high angle” or shooting “from above” refers to positioning the camera above the subject pointing down, which can frame the subject from an elevated viewpoint to emphasize smallness, vulnerability or isolation within the scene.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_angle_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">from below/low angle</h3>
+              <p class="img_desc">
+                Specifying a “low angle” or shooting “from below” refers to positioning the camera below the subject pointing up, which can prompt SD to frame the subject from a low viewpoint to exaggerate power, height and dominance within the scene.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_angle_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">eye level</h3>
+              <p class="img_desc">
+                Specifying an “eye level” camera angle refers to positioning the camera at the same height as the subject’s eyes, typically prompted in Stable Diffusion to create a direct perspective that conveys neutrality and intimacy with the subject.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- camera properties -->
+  <div class="ly_pop_wrap">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">camera properties</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Aaton LTR</h3>
+              <p class="img_desc">
+                The Aaton LTR 54 was a highly adaptable S16 cinema film camera which can be prompted in Stable Diffusion by specifying “shot on Aaton LTR” to emulate its natural perspective, subtle vignette look, and the texture of film.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">ARRI ALEXA 65</h3>
+              <p class="img_desc">
+                A high-end 65mm digital cinema camera known for its extremely high resolution and dynamic range, which can be prompted by specifying “shot on ALEXA 65” for detailed, crisp images with smooth tonality similar to its large format look.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Bolex H16</h3>
+              <p class="img_desc">
+                The Bolex H16 was a versatile, hand-cranked 16mm film camera which can be prompted in Stable Diffusion by specifying “shot on Bolex H16” to emulate its vintage 16mm look, natural vignette and handheld footage aesthetic.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">RED Digital Cinema Camera</h3>
+              <p class="img_desc">
+                The RED Digital Cinema Camera produces high-resolution digital footage with customizable color science, which can be simulated by specifying “shot on RED camera” desired RED image attributes include wide dynamic range and crisp details.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_05.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Canon EOS 5D</h3>
+              <p class="img_desc">
+                The Canon EOS 5D pioneered large sensor digital photography with cinema-quality shallow depth of field, which can be prompted with “shot on Canon EOS 5D” & referencing desired attributes like smooth background bokeh.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_06.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Fujifilm X-T4</h3>
+              <p class="img_desc">
+                The Fujifilm X-T4 mirrorless camera produces images with Fujifilm’s acclaimed color science and film simulation modes which can be simulated by prompting desired attributes like saturated colors, high contrast tones, and natural grain.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_07.jpg" alt="" class="picture_img">
+              <h3 class="img_title">GoPro Hero</h3>
+              <p class="img_desc">
+                The GoPro Hero action camera captures ultra wide-angle point- of-view footage with a bold fisheye look that can be creatively prompted using “(shot on GoPro Hero:1.4)”.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_08.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Hasselblad X1D II</h3>
+              <p class="img_desc">
+                A medium format camera that produces extremely high res images with tons of detail and Hasselblad’s iconic tonality, which can be simulated by prompting “shot on Hasselblad X1D II” with tags like fine texture, smooth color gradations.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_09.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Lumix GH5</h3>
+              <p class="img_desc">
+                The Panasonic Lumix GH5 is a Micro Four Thirds mirrorless camera known for its versatility in high bitrate 4K video, which can be creatively prompted with “shot on Lumix GH5” and tags like, cinematic bokeh, dynamic range, and vibrant colors.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_10.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Pentax 645Z</h3>
+              <p class="img_desc">
+                The Pentax 645Z medium format DSLR produces ultra high resolution images with tons of detail and incredible dynamic range, perfect for prompting “shot on Pentax 645Z” with rich textures, and smooth wide tonality.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_11.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Sony A7III</h3>
+              <p class="img_desc">
+                The Sony A7III full frame mirrorless camera offers immense flexibility with its advanced autofocus, prompt using “shot on Sony A7III”.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_12.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Leica T</h3>
+              <p class="img_desc">
+                The Leica T mirrorless APS-C system delivers Leica’s renowned image quality in a sharp modern form factor. Prompt with “shot on Leica T”. Add tags like smooth skin tone, Leica colors, shallow depth of field and vignetting.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_13.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Diana F+</h3>
+              <p class="img_desc">
+                This plastic toy camera has a cult following for its dreamy soft focus and vignetted images perfect for images with a hazy retro film aesthetic. Use with a weight of 1.6, film grain, dreamy haze blur and light leak tags. High-Res fix will reduce the effect.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_14.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Hasselblad 500CM</h3>
+              <p class="img_desc">
+                The Hasselblad 500CM medium format film camera produces images with incredible detail and tonality, perfect for prompting ultra-high resolution shots with subtle smooth transitions between colors and tones.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_15.jpg" alt="" class="picture_img">
+              <h3 class="img_title">HOLGA 120n</h3>
+              <p class="img_desc">
+                The Holga 120N toy film camera has a cult following for its vignetted, blurry, low-fi dreamlike images with light leaks perfect for prompting imaginative impressions with an unpredictable retro aesthetic.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_16.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Kodak Brownie</h3>
+              <p class="img_desc">
+                The Kodak Brownie box camera has an iconic vintage look with square medium format images, dark vignettes, soft focus and muted color tones perfect for prompting a nostalgic, retro stylistic perspective.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_17.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Kodak Funsaver</h3>
+              <p class="img_desc">
+                This plastic toy camera has a cult following for its dreamy soft focus and vignetted images perfect for images with a hazy retro film aesthetic. Use with a weight of 1.6, film grain, dreamy haze blur and light leak tags. High-Res fix will reduce the effect.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_18.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Leica M3</h3>
+              <p class="img_desc">
+                The Leica M3 rangefinder camera is known for its discreet operation, quiet shutter release, and exceptional image quality that enables prompting classic Leica tonality, microcontrast, and perspective from its superb prime lenses.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_19.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Rolleiflex</h3>
+              <p class="img_desc">
+                The Rolleiflex twin lens reflex medium format camera produces images with incredible detail and tonality perfect for prompting ultra-sharp photos with a distinctively intimate square perspective.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/camera_properties_20.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Polaroid SX-70</h3>
+              <p class="img_desc">
+                The Polaroid SX-70 instant camera has a signature square format with flat, muted colors, distinctive light streaks, and immediate tangible prints perfect for prompting nostalgic analog images with a faded retro aesthetic.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- film types -->
+  <div class="ly_pop_wrap">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">film types</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Agfa Vista</h3>
+              <p class="img_desc">
+                Agfa Vista was an inexpensive color print film known for its wild oversaturated colors, making it perfect for prompting images with an intensely vibrant, saturated aesthetic.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Cinestill 800T</h3>
+              <p class="img_desc">
+                Cinestill 800T is a tungsten-balanced 35mm motion picture film adapted for still photography, producing a signature low-fi crossover look with halation light leaks and rich cinematic colors that can be prompted by specifying its classic film attributes.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Ektar 100</h3>
+              <p class="img_desc">
+                Kodak Ektar 100 is a fine grain 35mm color negative film prized for its incredibly saturated colors and clean sharpness, ideal for prompting images with vivid, true-to-life color rendition and detail.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">film grain</h3>
+              <p class="img_desc">
+                Film grain refers to the visible texture and particles inherent in analog photographic film, which can be prompted by specifying desired qualities like “prominent grain”, “muted low grain”, or “fine grain” to achieve different textured retro film looks.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_05.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Ilford HP5 Plus</h3>
+              <p class="img_desc">
+                Ilford HP5 Plus is an ISO 400 black and white film prized for its versatility, and characteristic medium grain, which makes it great for prompting flexible black and white images with a stylized classic film grain look. Weight needs to be over 1.6.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_06.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Kodak Vision3</h3>
+              <p class="img_desc">
+                Kodak Vision3 is a professional 35mm motion picture camera film stock designed to deliver rich, vibrant color and fine grain ideal for prompting cinematic images and footage with robust color rendition and smooth textures.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_07.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Kodak Vision3 IMAX</h3>
+              <p class="img_desc">
+                Kodak Vision3 IMAX is a large format 65mm color negative film specifically engineered for IMAX cameras to produce unparalleled levels of fine detail perfect for prompting crisp intricate, high-resolution images with tons of visual information.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_08.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Lomochrome color film</h3>
+              <p class="img_desc">
+                Lomography Chromatic film, or Lomachrome, is a 35mm ISO 800 color negative film known for its vivid and unpredictable color shifts. Use this prompt with the Holga 120n or Diana F+ camera tags to make it work.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_09.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Porta 160</h3>
+              <p class="img_desc">
+                Kodak Portra 160 is a 160 ISO color negative film celebrated for its saturated colors and flattering skin tones, ideal for portrait prompts requiring smooth tones and natural color rendition.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_10.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Tri-X 400</h3>
+              <p class="img_desc">
+                Kodak Tri-X 400 is a classic ISO 400 monochromatic film distinguished by its rich blacks, broad exposure latitude, and distinct medium-sized grain, use with high weight of 1.8
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_11.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Velvia 100</h3>
+              <p class="img_desc">
+                Fujifilm Velvia 100 is a bright, vivid color reversal film known for its incredible saturation and fine grain, ideal for prompting brilliant landscape images with lush, dramatic colors and tons of detail.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/film_types_12.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Fujicolor Pro</h3>
+              <p class="img_desc">
+                Fujicolor Pro film is known for its natural, accurate, and well- balanced color reproduction perfect for prompting images with a realistic and subtle Fujifilm color palette.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- lenses -->
+  <div class="ly_pop_wrap">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">lenses</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lenses_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">50mm</h3>
+              <p class="img_desc">
+                A 50mm prime lens provides a natural field of view similar to human vision, useful for prompting realistic perspective in documentary or portrait photography styles
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lenses_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">8mm Fisheye Lens</h3>
+              <p class="img_desc">
+                A fisheye lens captures a spherical 180-degree field of view with strong circular barrel distortion perfect for prompting an immersive hemispherical perspective.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/lenses_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Voigtländer Nokton 50mm f1.1</h3>
+              <p class="img_desc">
+                produces dreamy images with extremely shallow depth of field and buttery smooth bokeh
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- filters effects -->
+  <div class="ly_pop_wrap">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">filters effects</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">black and white</h3>
+              <p class="img_desc">
+                Removing color saturation creates monochromatic images focused on light, shapes, texture and mood.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">color filter</h3>
+              <p class="img_desc">
+                Change color to the color you want to adds a tint over the image to darken skies similar to using an actual colored glass filter on a film camera lens.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">bokeh</h3>
+              <p class="img_desc">
+                Buttery smooth, aesthetically blurred out-of-focus backgrounds artistically isolate the main subject by minimizing distractions.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">desaturated</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_05.jpg" alt="" class="picture_img">
+              <h3 class="img_title">grunge filter</h3>
+              <p class="img_desc">
+                Removing color vibrancy and overlaying film grain, stains and defects creates a worn weathered, grungy texture.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_06.jpg" alt="" class="picture_img">
+              <h3 class="img_title">dreamy haze</h3>
+              <p class="img_desc">
+                Ethereal, romantic imagery emerges through soft focus light haze, subtle distortions and a detached, floating perspective.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_07.jpg" alt="" class="picture_img">
+              <h3 class="img_title">glitch style</h3>
+              <p class="img_desc">
+                Manipulating or corrupting digital imagery to intentionally introduce distortions, artifacts colors shifts, banding, and other digital aberrations
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_08.jpg" alt="" class="picture_img">
+              <h3 class="img_title">hologram effect</h3>
+              <p class="img_desc">
+                Creates a holographic lighting effect to clothing and backgrounds
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_09.jpg" alt="" class="picture_img">
+              <h3 class="img_title">(infrared filter:1.4)</h3>
+              <p class="img_desc">
+                Emulates the extreme color shifts of infrared photography dominated by pinkish hues from foliage and skies to uniquely reinterpret reality.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_10.jpg" alt="" class="picture_img">
+              <h3 class="img_title">lens flare</h3>
+              <p class="img_desc">
+                Vivid polygonal lens flares stylize the scene by adding striking bursts of light as if beams were intersecting the camera optics.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_11.jpg" alt="" class="picture_img">
+              <h3 class="img_title">sepia tone</h3>
+              <p class="img_desc">
+                Warm antique sepia pigment toning imbues a nostalgic vintage aesthetic. Use with a low weight to avoid your subject being historical.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_12.jpg" alt="" class="picture_img">
+              <h3 class="img_title">soft focus</h3>
+              <p class="img_desc">
+                Intentionally diffusing sharpness through spherical aberration lends a romantic, dreamy impression.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_13.jpg" alt="" class="picture_img">
+              <h3 class="img_title">solarized</h3>
+              <p class="img_desc">
+                Partially inverting the tonal range by blocking shadows creates a surreal duotone look.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_14.jpg" alt="" class="picture_img">
+              <h3 class="img_title">long exposure</h3>
+              <p class="img_desc">
+                Blurring any motion conveys the passage of time and artistic intentionality through extended exposure techniques.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_15.jpg" alt="" class="picture_img">
+              <h3 class="img_title">ND filter</h3>
+              <p class="img_desc">
+                Neutral density filters reduce incoming light levels, allowing slower shutter speeds to smoothly capture and etherealize motion.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_16.jpg" alt="" class="picture_img">
+              <h3 class="img_title">overexposed</h3>
+              <p class="img_desc">
+                Increasing exposure washes out imagery with bright whites, pure hues, and solarized effects to focus on light and color.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_17.jpg" alt="" class="picture_img">
+              <h3 class="img_title">technicolor</h3>
+              <p class="img_desc">
+                Mimicking the saturated look of old Technicolor film processes through vibrant, dramatic colors.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_18.jpg" alt="" class="picture_img">
+              <h3 class="img_title">underexposed</h3>
+              <p class="img_desc">
+                Decreasing exposure mutes the image with dark shadows and somber tones for mysterious low key effects.
+              </p>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/filters_effects_19.jpg" alt="" class="picture_img">
+              <h3 class="img_title">vignette</h3>
+              <p class="img_desc">
+                Framing the central subject by gradually darkening the outer corners and edges puts emphasis on the main focus.
+              </p>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+  <!-- photographers -->
+  <div class="ly_pop_wrap">
+    <div id="dimmed"></div>
+    <div class="ly_pop">
+      <h2 class="ly_pop_title">photographers</h2>
+      <div class="ly_pop_img_box">
+        <ul class="ly_pop_img_list">
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_01.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Alberto Seveso</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_02.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Alex Timmermans</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_03.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Alfred Stieglitz</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_04.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Ando Fuchs</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_05.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Anne Brigman</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_06.jpg" alt="" class="picture_img">
+              <h3 class="img_title">August Sander</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_07.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Brandon Woelfel</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_08.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Chris Friel</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_09.jpg" alt="" class="picture_img">
+              <h3 class="img_title">David LaChapelle</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_10.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Eugene Atget</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_11.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Garry Winograd</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_12.jpg" alt="" class="picture_img">
+              <h3 class="img_title">George Hurrell</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_13.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Germaine Krull</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_14.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Hans Bellmer</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_15.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Hayao Miyazaki</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_16.jpg" alt="" class="picture_img">
+              <h3 class="img_title">James Bidgood</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_17.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Kim Keever</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_18.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Lee Friedlander</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_19.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Liam Wong</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_20.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Lotte Reiniger</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_21.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Martin Schoeller</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_22.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Mickalene Thomas</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_23.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Miko Lagerstedt</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_24.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Miles Aldridge</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_25.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Misha Gordin</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_26.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Nan Goldin</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_27.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Nathan Wirth</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_28.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Nick Knight</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_29.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Oleg Oprisco</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_30.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Oskar Fischinger</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_31.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Paolo Roversi</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_32.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Paul Barson</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_33.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Richard Avedon</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_34.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Tim Walker</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_35.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Tyler Shields</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_36.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Walker Evans</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_37.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Wes Anderson</h3>
+            </div>
+          </li>
+          <li class="ly_pop_img_item">
+            <div class="img_box">
+              <img src="/AIxStudio/img/photographers_38.jpg" alt="" class="picture_img">
+              <h3 class="img_title">Yousuf Karsh</h3>
+            </div>
+          </li>
+        </ul>
+        <button class="btn_close_ly_pop">close</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
