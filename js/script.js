@@ -272,14 +272,14 @@ function settingTextHandler(){
     // 순서를 유지하며 각 변수 처리
     let promptArray = [];
 
-    // 1. styleKeyword는 공백으로 추가
-    if (styleKeyword) {
-        promptArray.push(styleKeyword + " photo of" + ' '); // styleKeyword 뒤에 공백 추가
+    // 1. styleKeyword
+    if(styleKeyword) {
+      promptArray.push(styleKeyword + " photo of");
     }
 
-    // 2. 나머지 키워드들은 subjectKeyword와 함께 콤마로 구분해서 추가
+    // 2. 나머지 키워드 처리
     const remainingKeywords = [
-      subjectKeyword, // subjectKeyword를 먼저 추가
+      subjectKeyword ? ' ' + subjectKeyword : '', // subjectKeyword가 없으면 공백, 있으면 추가
       framingKeyword, 
       settingBackgroundKeyword, 
       lightingKeyword, 
@@ -287,15 +287,20 @@ function settingTextHandler(){
       cameraPropertiesKeyword, 
       filmTypesKeyword, 
       lensesKeyword,
-      filtersEffectsKeyword, 
-      'in the style of ' + photographersKeyword
+      filtersEffectsKeyword,
+      photographersKeyword ? 'in the style of ' + photographersKeyword : null
     ]
     .filter(Boolean) // 값이 있는 것만 필터링
     .join(', ');     // 콤마로 연결
 
     // remainingKeywords가 있으면 추가
     if (remainingKeywords) {
-        promptArray.push(remainingKeywords);
+        // subjectKeyword가 없으면 바로 콤마 추가
+        if (!subjectKeyword || subjectKeyword.trim() === '') {
+            promptArray.push(', ' + remainingKeywords);
+        } else {
+            promptArray.push(remainingKeywords);
+        }
     }
 
     // 모든 요소를 하나로 연결 (공백을 기준으로)
@@ -303,8 +308,7 @@ function settingTextHandler(){
 
     // textField에 텍스트 설정
     $(textField).text(promptText);
-  }
+}
 
-
-
+  
 }
