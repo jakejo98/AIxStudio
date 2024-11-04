@@ -1,0 +1,47 @@
+.common_footer {
+  padding: 50px 80px;
+  background-color: #F7F9FC;
+  & .footer_copy {
+    padding-bottom: 18px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+  }
+  & .footer_content {
+    display: flex;
+    justify-content: space-between;
+    & .footer_company {
+      & .company_info {
+        margin-bottom: 30px;
+        & .company_info_list {
+          & .company_info_item {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+      & .company_contact {
+        & .company_contact_list {
+          & .company_contact_item {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    & .footer_util {
+      & .footer_util_list {
+        & .footer_util_item {
+          &:not(:last-of-type) {
+            margin-bottom: 6px;
+          }
+          & .footer_util_link {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

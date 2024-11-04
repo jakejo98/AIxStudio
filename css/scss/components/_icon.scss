@@ -1,0 +1,57 @@
+.common_icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+  &::after {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: center / 100% no-repeat;
+    content: "";
+  }
+}
+
+.icon_logo {
+  width: 246px;
+  height: 39px;
+  &::after {
+    background-image: url('../../../img/icon/icon_logo.svg');
+  }
+}
+
+.icon_mypage {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_mypage.svg');
+  }
+}
+
+.icon_shopping {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_shopping.svg');
+  }
+}
+
+.icon_prompt_setting {
+  width: 30px;
+  height: 30px;
+  &::after {
+    background-image: url('../../../img/icon/icon_prompt_setting.svg');
+  }
+}
+
+.icon_ly_pop_close {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_ly_pop_close.svg');
+  }
+}
