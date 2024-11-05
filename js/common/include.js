@@ -25,6 +25,6 @@ export function loadFile(callback) {
     }
   }
 
-  loadIfExists('#header', '../../html/header.html');
-  loadIfExists('#footer', '../../html/footer.html');
+  loadIfExists('#header', '/AIxStudio/html/header.html');
+  loadIfExists('#footer', '/AIxStudio/html/footer.html');
 }

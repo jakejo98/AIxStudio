@@ -16,11 +16,21 @@
   }
 }
 
-.icon_logo {
-  width: 246px;
-  height: 39px;
+.icon_logo_black {
+  @media screen and (max-width: 767px) {
+    width: 100px;
+    height: 29px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1039px) {
+    width: 85px;
+    height: 24px;
+  }
+  @media screen and (min-width: 1040px) {
+    width: 246px;
+    height: 39px;
+  }
   &::after {
-    background-image: url('../../../img/icon/icon_logo.svg');
+    background-image: url('/AIxStudio/img/icon/icon_logo_black.svg');
   }
 }
 
@@ -28,7 +38,7 @@
   width: 24px;
   height: 24px;
   &::after {
-    background-image: url('../../../img/icon/icon_mypage.svg');
+    background-image: url('/AIxStudio/img/icon/icon_mypage.svg');
   }
 }
 
@@ -36,22 +46,31 @@
   width: 24px;
   height: 24px;
   &::after {
-    background-image: url('../../../img/icon/icon_shopping.svg');
+    background-image: url('/AIxStudio/img/icon/icon_shopping.svg');
   }
 }
 
 .icon_prompt_setting {
-  width: 30px;
-  height: 30px;
-  &::after {
-    background-image: url('../../../img/icon/icon_prompt_setting.svg');
-  }
-}
-
-.icon_ly_pop_close {
   width: 24px;
   height: 24px;
   &::after {
-    background-image: url('../../../img/icon/icon_ly_pop_close.svg');
+    background-image: url('/AIxStudio/img/icon/icon_prompt_setting.svg');
   }
 }
+
+.icon_close {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('/AIxStudio/img/icon/icon_close.svg');
+  }
+}
+
+.icon_menu {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('/AIxStudio/img/icon/icon_menu.svg');
+  }
+}
+

@@ -1,155 +1,548 @@
-.common_wrap {
-  & .common_container {
-    min-height: 100vh;
-    background-color: #F3F4F6;
-    & .common_section {
-      // 프롬프트 영역
-      &.section_prompt {
-        padding: 40px 0px;
-        & .section_heading {
-          & .section_title {
-            margin-bottom: 12px;
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 40px;
-            text-align: center;
-          }
-          & .section_sub_title {
-            font-size: 16px;
-            line-height: 24px;
-            color: #4C4C4C;
-            text-align: center;
-          }
-        }
-        & .prompt {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 1000px;
+// 모바일
+@media screen and (max-width: 767px) {
+  .common_wrap {
+    & .common_container {
+      min-height: 100vh;
+      background-color: #F3F4F6;
+      & .common_section {
+        // 프롬프트 영역
+        &.section_prompt {
           padding: 20px 0px;
-          margin: 0 auto;
-          & .prompt_form {
-            position: relative;
-            width: calc(100% - 210px);
-            & .prompt_input {
-              width: 100%;
-              padding: 0px 15px;
-              border: none;
-              border-radius: 3px;
-              font-size: 20px;
-              line-height: 55px;
-              background-color: #FFFFFF;
-              resize: none;
-              &::placeholder {
-                color: #BDBDBD;
-              }
-              &:focus::placeholder {
-                color: transparent;
-              }
-              &:focus {
-                outline: none;
-              }
+          & .section_heading {
+            & .section_title {
+              margin-bottom: 10px;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 36px;
+              text-align: center;
             }
-            & .btn_prompt_setting {
-              position: absolute;
-              top: 50%;
-              right: 15px;
-              transform: translateY(-50%);
+            & .section_sub_title {
+              font-size: 14px;
+              line-height: 20px;
+              color: #4C4C4C;
+              text-align: center;
             }
           }
-          & .btn_generate_image {
-            width: 200px;
-            border: 2px solid #8850FF;
-            border-radius: 27.5px;
-            background-color: #FFFFFF;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 51px;
-            transition: 0.3s all ease;
-            &:hover {
-              background-color: #8850FF;
-              color: #FFFFFF;
-            }
-          }
-        }
-        & .setting {
-          display: none;
-          width: 1000px;
-          padding: 30px 0px;
-          margin: 0 auto;
-          &.active {
-            display: block;
-          }
-          & .setting_list {
+          & .prompt {
             display: flex;
-            flex-wrap: wrap;
-            & .setting_item {
-              width: calc((100% / 3) - (40px / 3));
-              &:not(:nth-of-type(3n)){
-                margin-right: 20px;
-              }
-              &:nth-of-type(n+4) {
-                margin-top: 20px;
-              }
-              & .setting_label {
-                display: inline-block;
-                margin-bottom: 6px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 12px 0px;
+            margin: 0 auto;
+            & .prompt_form {
+              position: relative;
+              width: 100%;
+              & .prompt_input {
+                width: 100%;
+                padding: 0px 15px;
+                border: none;
+                border-radius: 3px;
                 font-size: 16px;
-                line-height: 24px;
-                color: #4C4C4C;
+                line-height: 55px;
+                background-color: #FFFFFF;
+                resize: none;
+                &::placeholder {
+                  color: #BDBDBD;
+                }
+                &:focus::placeholder {
+                  color: transparent;
+                }
+                &:focus {
+                  outline: none;
+                }
               }
-              & .setting_input_box {
-                position: relative;
-                & .setting_input {
-                  width: 100%;
-                  padding: 10px 16px;
-                  border: 1px solid #4C4C4C;
-                  border-radius: 5px;
-                  background-color: #FFFFFF;
+              & .btn_prompt_setting {
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+              }
+            }
+            & .btn_generate_image {
+              margin-top: 12px;
+              width: 50%;
+              border: 2px solid #8850FF;
+              border-radius: 27.5px;
+              background-color: #FFFFFF;
+              font-size: 16px;
+              font-weight: 700;
+              line-height: 51px;
+              transition: 0.3s all ease;
+              &:hover {
+                background-color: #8850FF;
+                color: #FFFFFF;
+              }
+            }
+          }
+          & .setting {
+            display: none;
+            padding: 16px 20px;
+            margin: 0 auto;
+            &.active {
+              display: block;
+            }
+            & .setting_list {
+              display: flex;
+              flex-wrap: wrap;
+              & .setting_item {
+                width: 100%;
+                &:nth-of-type(n+2) {
+                  margin-top: 20px;
+                }
+                & .setting_label {
+                  display: inline-block;
+                  margin-bottom: 6px;
                   font-size: 16px;
                   line-height: 24px;
-                  &::placeholder {
-                    color: #BDBDBD;
+                  color: #4C4C4C;
+                }
+                & .setting_input_box {
+                  position: relative;
+                  & .setting_input {
+                    width: 100%;
+                    padding: 10px 16px;
+                    border: 1px solid #4C4C4C;
+                    border-radius: 5px;
+                    background-color: #FFFFFF;
+                    font-size: 16px;
+                    line-height: 24px;
+                    &::placeholder {
+                      color: #BDBDBD;
+                    }
+                  }
+                  & .btn_setting_select {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    padding: 14px 10px;
+                    border-radius: 0px 5px 5px 0px;
+                    background-color: #4C4C4C;
+                    font-size: 12px;
+                    font-weight: 100;
+                    line-height: 18px;
+                    color: #FFFFFF;
+                    transition: 0.3s all ease;
+                    &:hover {
+                      background-color: #333333;
+                    }
                   }
                 }
-                & .btn_setting_select {
-                  position: absolute;
-                  top: 0px;
-                  right: 0px;
-                  padding: 14px 10px;
-                  border-radius: 0px 5px 5px 0px;
-                  background-color: #4C4C4C;
-                  font-size: 12px;
-                  font-weight: 100;
-                  line-height: 18px;
-                  color: #FFFFFF;
-                  transition: 0.3s all ease;
-                  &:hover {
-                    background-color: #333333;
+              }
+            }
+          }
+        }
+        // 생성된 이미지 영역
+        &.section_generate {
+          padding: 20px 20px 80px 20px;
+          & .generate {
+            & + .generate {
+              margin-top: 30px;
+            }
+            & .generate_grid {
+              & .generate_grid_list {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                & .generate_grid_item {
+                  width: 100%;
+                  aspect-ratio: 1 / 2;
+                  & .generate_grid_box {
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #e0e0e0;
+                    & img {
+                      border-radius: 5px;
+                    }
                   }
                 }
+              }
+            }
+            & .generate_info {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1039px) {
+  .common_wrap {
+    & .common_container {
+      min-height: 100vh;
+      background-color: #F3F4F6;
+      & .common_section {
+        // 프롬프트 영역
+        &.section_prompt {
+          padding: 30px 0px;
+          & .section_heading {
+            & .section_title {
+              margin-bottom: 10px;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 36px;
+              text-align: center;
+            }
+            & .section_sub_title {
+              font-size: 14px;
+              line-height: 20px;
+              color: #4C4C4C;
+              text-align: center;
+            }
+          }
+          & .prompt {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            padding: 16px 0px;
+            margin: 0 auto;
+            & .prompt_form {
+              position: relative;
+              width: 100%;
+              & .prompt_input {
+                width: 100%;
+                padding: 0px 15px;
+                border: none;
+                border-radius: 3px;
+                font-size: 16px;
+                line-height: 44px;
+                background-color: #FFFFFF;
+                resize: none;
+                &::placeholder {
+                  color: #BDBDBD;
+                }
+                &:focus::placeholder {
+                  color: transparent;
+                }
+                &:focus {
+                  outline: none;
+                }
+              }
+              & .btn_prompt_setting {
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+              }
+            }
+            & .btn_generate_image {
+              margin-top: 16px;
+              width: 50%;
+              border: 2px solid #8850FF;
+              border-radius: 27.5px;
+              background-color: #FFFFFF;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 44px;
+              transition: 0.3s all ease;
+              &:hover {
+                background-color: #8850FF;
+                color: #FFFFFF;
+              }
+            }
+          }
+          & .setting {
+            display: none;
+            padding: 20px;
+            margin: 0 auto;
+            &.active {
+              display: block;
+            }
+            & .setting_list {
+              display: flex;
+              flex-wrap: wrap;
+              & .setting_item {
+                width: calc((100% - 20px) / 2);
+                &:not(:nth-of-type(2n)){
+                  margin-right: 20px;
+                }
+                &:nth-of-type(n+3) {
+                  margin-top: 20px;
+                }
+                & .setting_label {
+                  display: inline-block;
+                  margin-bottom: 6px;
+                  font-size: 14px;
+                  line-height: 20px;
+                  color: #4C4C4C;
+                }
+                & .setting_input_box {
+                  position: relative;
+                  & .setting_input {
+                    width: 100%;
+                    padding: 9px 10px;
+                    border: 1px solid #4C4C4C;
+                    border-radius: 5px;
+                    background-color: #FFFFFF;
+                    font-size: 14px;
+                    line-height: 20px;
+                    &::placeholder {
+                      color: #BDBDBD;
+                    }
+                  }
+                  & .btn_setting_select {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    padding: 11px 10px;
+                    border-radius: 0px 5px 5px 0px;
+                    background-color: #4C4C4C;
+                    font-size: 12px;
+                    font-weight: 100;
+                    line-height: 18px;
+                    color: #FFFFFF;
+                    transition: 0.3s all ease;
+                    &:hover {
+                      background-color: #333333;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        // 생성된 이미지 영역
+        &.section_generate {
+          padding: 20px 20px 80px 20px;
+          & .generate {
+            display: flex;
+            justify-content: space-between;
+            & + .generate {
+              margin-top: 30px;
+            }
+            & .generate_grid {
+              width: 75%;
+              & .generate_grid_list {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                & .generate_grid_item {
+                  width: 100%;
+                  aspect-ratio: 1 / 2;
+                  & .generate_grid_box {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                    background-color: #e0e0e0;
+                    & img {
+                      border-radius: 5px;
+                    }
+                  }
+                }
+              }
+            }
+            & .generate_info {
+              width: 23%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              & .generate_info_prompt {
+                font-size: 14px;
+                line-height: 20px;
+              }
+              & .generate_info_time {
+                margin-top: 20px;
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 18px;
               }
             }
           }
         }
       }
-      // 생성된 이미지 영역
-      &.section_generate {
-        padding: 30px 0px 100px 0px;
-        & .generate_grid {
-          width: 1000px;
-          margin: 0 auto;
-          & .generate_grid_list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            & .generate_grid_item {
-              width: 100%;
-              aspect-ratio: 1 / 2;
-              & .generate_grid_box {
-                background-color: #e0e0e0; /* 이미지가 없을 경우 배경색 지정 */
+    }
+  }
+}
+// 데스크탑
+@media screen and (min-width: 1040px) {
+  .common_wrap {
+    & .common_container {
+      min-height: 100vh;
+      background-color: #F3F4F6;
+      & .common_section {
+        // 프롬프트 영역
+        &.section_prompt {
+          padding: 40px 0px;
+          & .section_heading {
+            & .section_title {
+              margin-bottom: 12px;
+              font-size: 36px;
+              font-weight: 700;
+              line-height: 40px;
+              text-align: center;
+            }
+            & .section_sub_title {
+              font-size: 16px;
+              line-height: 24px;
+              color: #4C4C4C;
+              text-align: center;
+            }
+          }
+          & .prompt {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1000px;
+            padding: 20px 0px;
+            margin: 0 auto;
+            & .prompt_form {
+              position: relative;
+              width: calc(100% - 210px);
+              & .prompt_input {
                 width: 100%;
-                height: 100%;
+                padding: 0px 15px;
+                border: none;
+                border-radius: 3px;
+                font-size: 20px;
+                line-height: 55px;
+                background-color: #FFFFFF;
+                resize: none;
+                &::placeholder {
+                  color: #BDBDBD;
+                }
+                &:focus::placeholder {
+                  color: transparent;
+                }
+                &:focus {
+                  outline: none;
+                }
+              }
+              & .btn_prompt_setting {
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+              }
+            }
+            & .btn_generate_image {
+              width: 200px;
+              border: 2px solid #8850FF;
+              border-radius: 27.5px;
+              background-color: #FFFFFF;
+              font-size: 20px;
+              font-weight: 700;
+              line-height: 51px;
+              transition: 0.3s all ease;
+              &:hover {
+                background-color: #8850FF;
+                color: #FFFFFF;
+              }
+            }
+          }
+          & .setting {
+            display: none;
+            width: 1000px;
+            padding: 30px 0px;
+            margin: 0 auto;
+            &.active {
+              display: block;
+            }
+            & .setting_list {
+              display: flex;
+              flex-wrap: wrap;
+              & .setting_item {
+                width: calc((100% / 3) - (40px / 3));
+                &:not(:nth-of-type(3n)){
+                  margin-right: 20px;
+                }
+                &:nth-of-type(n+4) {
+                  margin-top: 20px;
+                }
+                & .setting_label {
+                  display: inline-block;
+                  margin-bottom: 6px;
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: #4C4C4C;
+                }
+                & .setting_input_box {
+                  position: relative;
+                  & .setting_input {
+                    width: 100%;
+                    padding: 10px 16px;
+                    border: 1px solid #4C4C4C;
+                    border-radius: 5px;
+                    background-color: #FFFFFF;
+                    font-size: 16px;
+                    line-height: 24px;
+                    &::placeholder {
+                      color: #BDBDBD;
+                    }
+                  }
+                  & .btn_setting_select {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    padding: 14px 10px;
+                    border-radius: 0px 5px 5px 0px;
+                    background-color: #4C4C4C;
+                    font-size: 12px;
+                    font-weight: 100;
+                    line-height: 18px;
+                    color: #FFFFFF;
+                    transition: 0.3s all ease;
+                    &:hover {
+                      background-color: #333333;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        // 생성된 이미지 영역
+        &.section_generate {
+          width: 1000px;
+          padding: 30px 0px 100px 0px;
+          margin: 0 auto;
+          & .generate {
+            display: flex;
+            justify-content: space-between;
+            & + .generate {
+              margin-top: 30px;
+            }
+            & .generate_grid {
+              width: 75%;
+              & .generate_grid_list {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                & .generate_grid_item {
+                  width: 100%;
+                  aspect-ratio: 1 / 2;
+                  & .generate_grid_box {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 5px;
+                    background-color: #e0e0e0;
+                    & img {
+                      border-radius: 5px;
+                    }
+                  }
+                }
+              }
+            }
+            & .generate_info {
+              width: 23%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              & .generate_info_prompt {
+                font-size: 16px;
+                line-height: 24px;
+              }
+              & .generate_info_time {
+                margin-top: 20px;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 20px;
+                color: #4C4C4C;
               }
             }
           }
