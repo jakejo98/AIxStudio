@@ -9,9 +9,9 @@
       }
       & .header_inner {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        padding: 10px 0px;
+        padding: 15.5px 0px;
         &.desktop {
           display: none;
         }
@@ -108,9 +108,9 @@
       }
       & .header_inner {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        padding: 7px 0px;
+        padding: 13px 0px;
         &.desktop {
           display: none;
         }
@@ -222,8 +222,9 @@
     }
     & .header_inner {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      padding: 15.5px 0px;
       &.rwd {
         display: none;
       }

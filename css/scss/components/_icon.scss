@@ -74,3 +74,10 @@
   }
 }
 
+.icon_generate_image {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('/AIxStudio/img/icon/icon_generate_image.svg');
+  }
+}
