@@ -26,13 +26,13 @@
           }
           & .prompt {
             display: flex;
-            align-items: center;
             width: 100%;
             padding: 12px 0px;
             margin: 0 auto;
             & .prompt_form {
               position: relative;
               width: 100%;
+              font-size: 0px;
               & .prompt_input {
                 width: 100%;
                 padding: 12px 16px;
@@ -43,7 +43,7 @@
                 background-color: #FFFFFF;
                 resize: none;
                 &::placeholder {
-                  color: #BDBDBD;
+                  visibility: hidden;
                 }
                 &:focus::placeholder {
                   color: transparent;
@@ -135,12 +135,15 @@
         }
         // 생성된 이미지 영역
         &.section_generate {
-          padding: 20px 20px 80px 20px;
+          &.active {
+            padding: 20px 20px 80px 20px;
+          }
           & .generate {
             & + .generate {
               margin-top: 30px;
             }
             & .generate_grid {
+              width: 100%;
               & .generate_grid_list {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -159,9 +162,6 @@
                   }
                 }
               }
-            }
-            & .generate_info {
-              display: none;
             }
           }
         }
@@ -197,13 +197,13 @@
           }
           & .prompt {
             display: flex;
-            align-items: center;
             width: 100%;
             padding: 16px 0px;
             margin: 0 auto;
             & .prompt_form {
               position: relative;
               width: 85%;
+              font-size: 0px;
               & .prompt_input {
                 width: 100%;
                 padding: 9px 16px;
@@ -308,7 +308,9 @@
         }
         // 생성된 이미지 영역
         &.section_generate {
-          padding: 20px 20px 80px 20px;
+          &.active {
+            padding: 20px 20px 90px 20px;
+          }
           & .generate {
             display: flex;
             justify-content: space-between;
@@ -316,7 +318,7 @@
               margin-top: 30px;
             }
             & .generate_grid {
-              width: 75%;
+              width: 100%;
               & .generate_grid_list {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -334,22 +336,6 @@
                     }
                   }
                 }
-              }
-            }
-            & .generate_info {
-              width: 23%;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              & .generate_info_prompt {
-                font-size: 14px;
-                line-height: 20px;
-              }
-              & .generate_info_time {
-                margin-top: 20px;
-                font-size: 12px;
-                font-weight: 300;
-                line-height: 18px;
               }
             }
           }
@@ -386,13 +372,13 @@
           & .prompt {
             display: flex;
             justify-content: space-between;
-            align-items: center;
             width: 1000px;
             padding: 20px 0px;
             margin: 0 auto;
             & .prompt_form {
               position: relative;
               width: 850px;
+              font-size: 0px;
               & .prompt_input {
                 width: 100%;
                 padding: 9px 16px;
@@ -497,8 +483,10 @@
         }
         // 생성된 이미지 영역
         &.section_generate {
-          padding: 30px 20px 100px 20px;
           margin: 0 auto;
+          &.active {
+            padding: 30px 20px 100px 20px;
+          }
           & .generate {
             display: flex;
             justify-content: space-between;
@@ -506,7 +494,7 @@
               margin-top: 30px;
             }
             & .generate_grid {
-              width: 75%;
+              width: 100%;
               & .generate_grid_list {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -524,23 +512,6 @@
                     }
                   }
                 }
-              }
-            }
-            & .generate_info {
-              width: 23%;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              & .generate_info_prompt {
-                font-size: 16px;
-                line-height: 24px;
-              }
-              & .generate_info_time {
-                margin-top: 20px;
-                font-size: 14px;
-                font-weight: 300;
-                line-height: 20px;
-                color: #4C4C4C;
               }
             }
           }

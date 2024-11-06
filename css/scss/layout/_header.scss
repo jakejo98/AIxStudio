@@ -4,6 +4,7 @@
   @media screen and (max-width: 767px) {
     .common_header {
       padding: 0px 20px;
+      border-bottom: 1px solid #DDDDDD;
       & .header_util {
         display: none;
       }
@@ -103,6 +104,7 @@
   @media screen and (min-width: 768px) and (max-width: 1039px) {
     .common_header {
       padding: 0px 20px;
+      border-bottom: 1px solid #DDDDDD;
       & .header_util {
         display: none;
       }
@@ -203,6 +205,7 @@
 @media screen and (min-width: 1040px) {
   .common_header {
     padding: 0px 20px;
+    border-bottom: 1px solid #DDDDDD;
     & .header_util {
       padding: 5px 0px;
       & .header_util_list {
@@ -222,9 +225,8 @@
     }
     & .header_inner {
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 15.5px 0px;
+      padding: 25px 0px;
       &.rwd {
         display: none;
       }
