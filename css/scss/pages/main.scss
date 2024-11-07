@@ -44,7 +44,7 @@
                 background-color: #FFFFFF;
                 resize: none;
                 &::placeholder {
-                  visibility: hidden;
+                  color: #BDBDBD;
                 }
                 &:focus::placeholder {
                   color: transparent;

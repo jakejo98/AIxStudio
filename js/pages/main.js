@@ -429,7 +429,8 @@ function mobileRemovePlaceholder(){
 
   function updatePlaceholder(){
     if($(window).width() < 768){
-      $(input).removeAttr('placeholder');
+      $(input).attr('placeholder', 'Search');
+      // $(input).removeAttr('placeholder');
     } else {
       $(input).attr('placeholder', 'Search the world\'s best creative photos and images');
     }
