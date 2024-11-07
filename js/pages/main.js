@@ -304,12 +304,15 @@ function commonSettingTextInclude(){
   }
 }
 // 이미지 생성 버튼
-function commonGenerateTemplate(){
+function commonGenerateTemplate() {
   const generateBtn = $('.btn_generate_image');
   const generateArea = $('.section_generate');
   const section = $('.section_generate');
   const isActive = 'active';
-  $(generateBtn).click(function(){
+
+  $(generateBtn).click(function() {
+
+    // Generate the grid with numbers based on clickCount
     const generateGrid = `
       <div class="generate">
         <div class="generate_grid">
@@ -330,19 +333,16 @@ function commonGenerateTemplate(){
         </div>
       </div>
     `;
-    const generatePrompt = $('.generate_info_prompt');
-    const generateTime = $('.generate_info_time');
 
-    $(generateArea).append(generateGrid);
-    $(generatePrompt).text('This is test prompt');
-    $(generateTime).text('2024.11.04 17:00:00');
+    $(generateArea).prepend(generateGrid);
 
-    // section_generate가 active 클래스가 없는 경우에만 active 클래스 추가
-    if(!$(section).hasClass(isActive)){
+    // Add the active class only if it doesn’t already exist
+    if (!$(section).hasClass(isActive)) {
       $(section).addClass(isActive);
     }
-  })
+  });
 }
+
 
 // 프롬프트 텍스트 내용에 따라 높이값 변화
 function commonUpdatePromptLine() {
