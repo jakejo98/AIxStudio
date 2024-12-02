@@ -1,0 +1,252 @@
+// 모바일
+@media screen and (max-width: 767px) {
+  .ly_pop_wrap {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    &.active {
+      display: block;
+    }
+    & .dimmed {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    & .ly_pop {
+      overflow-y: scroll;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-height: 90vh;
+      background-color: #FFFFFF;
+      transform: translate(-50%, -50%);
+      & .ly_pop_heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+        & .ly_pop_title {
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 42px;
+        }
+      }
+      & .ly_pop_assets {
+        & .ly_pop_assets_list {
+          display: flex;
+          flex-wrap: wrap;
+          & .ly_pop_assets_item {
+            width: calc((100% / 2) - 10px);
+            &:not(:nth-of-type(2n)) {
+              margin-right: 20px;
+            }
+            &:nth-of-type(n+3) {
+              margin-top: 20px;
+            }
+            & .ly_pop_assets_box {
+              height: 100%;
+              padding: 16px;
+              border: 1px solid #DDDDDD;
+              border-radius: 10px;
+              cursor: pointer;
+              & .ly_pop_assets_img {
+                width: 100%;
+                padding: 0px 10px;
+                margin-bottom: 12px;
+              }
+              & .ly_pop_assets_type {
+                display: inline-block;
+                margin-bottom: 6px;
+                font-size: 16px;
+                line-height: 24px;
+              }
+              & .ly_pop_assets_explain {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 20px;
+                color: #666666;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1039px) {
+  .ly_pop_wrap {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    &.active {
+      display: block;
+    }
+    & .dimmed {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    & .ly_pop {
+      overflow-y: scroll;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-height: 90vh;
+      background-color: #FFFFFF;
+      transform: translate(-50%, -50%);
+      & .ly_pop_heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+        & .ly_pop_title {
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 42px;
+        }
+      }
+      & .ly_pop_assets {
+        & .ly_pop_assets_list {
+          display: flex;
+          flex-wrap: wrap;
+          & .ly_pop_assets_item {
+            width: calc((100% / 3) - (40px / 3));
+            &:not(:nth-of-type(3n)) {
+              margin-right: 20px;
+            }
+            &:nth-of-type(n+4) {
+              margin-top: 20px;
+            }
+            & .ly_pop_assets_box {
+              height: 100%;
+              padding: 16px;
+              border: 1px solid #DDDDDD;
+              border-radius: 10px;
+              cursor: pointer;
+              & .ly_pop_assets_img {
+                width: 100%;
+                padding: 0px 10px;
+                margin-bottom: 12px;
+              }
+              & .ly_pop_assets_type {
+                display: inline-block;
+                margin-bottom: 6px;
+                font-size: 16px;
+                line-height: 24px;
+              }
+              & .ly_pop_assets_explain {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 20px;
+                color: #666666;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 데스크탑
+@media screen and (min-width: 1040px) {
+  .ly_pop_wrap {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    &.active {
+      display: block;
+    }
+    & .dimmed {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    & .ly_pop {
+      overflow-y: scroll;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 20px;
+      border-radius: 10px;
+      width: 1000px;
+      max-height: 90vh;
+      background-color: #FFFFFF;
+      transform: translate(-50%, -50%);
+      & .ly_pop_heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+        & .ly_pop_title {
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 42px;
+        }
+      }
+      & .ly_pop_assets {
+        & .ly_pop_assets_list {
+          display: flex;
+          flex-wrap: wrap;
+          & .ly_pop_assets_item {
+            width: calc((100% / 3) - (40px / 3));
+            &:not(:nth-of-type(3n)) {
+              margin-right: 20px;
+            }
+            &:nth-of-type(n+4) {
+              margin-top: 20px;
+            }
+            & .ly_pop_assets_box {
+              height: 100%;
+              padding: 16px;
+              border: 1px solid #DDDDDD;
+              border-radius: 10px;
+              cursor: pointer;
+              & .ly_pop_assets_img {
+                width: 100%;
+                padding: 0px 10px;
+                margin-bottom: 12px;
+              }
+              & .ly_pop_assets_type {
+                display: inline-block;
+                margin-bottom: 6px;
+                font-size: 16px;
+                line-height: 24px;
+              }
+              & .ly_pop_assets_explain {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 20px;
+                color: #666666;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
