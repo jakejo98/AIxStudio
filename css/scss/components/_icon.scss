@@ -58,11 +58,27 @@
   }
 }
 
-.icon_close {
+.icon_prompt_setting_close{
   width: 24px;
   height: 24px;
   &::after {
-    background-image: url('/AIxStudio/img/icon/icon_close.svg');
+    background-image: url('/AIxStudio/img/icon/icon_prompt_setting_close.svg');
+  }
+}
+
+.icon_original_image_save {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('/AIxStudio/img/icon/icon_original_image_save.svg');
+  }
+}
+
+.icon_original_image_close {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('/AIxStudio/img/icon/icon_original_image_close.svg');
   }
 }
 

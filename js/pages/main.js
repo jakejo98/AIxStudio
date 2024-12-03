@@ -1,19 +1,24 @@
 export function mainpageHandler(){
   commonHandler();
   mobileHandler();
+  desktopHandler();
 }
 
 function commonHandler(){
   commonSetting();
   commonSettingPopup();
   commonSettingTextInclude();
-  commonUpdatePromptLine();
+  commonUpdatePromptAdjust();
   commonWorkflowHandler();
   commonProgressTextEffects();
 }
 
 function mobileHandler(){
   mobileRemovePlaceholder();
+}
+
+function desktopHandler(){
+  desktopHorizontalScroll();
 }
 
 // 프롬프트 설정 프롬프트 활성화
@@ -39,7 +44,6 @@ function commonSettingPopup(){
   $(isActiveSettingPopupBtn).click(function(){
     $('body').addClass(isFixed);
     const btnIndex = $(this).closest(settingItem).index() - 2;
-    console.log(btnIndex);
     $(popup).eq(btnIndex).addClass(isActive).siblings().removeClass(isActive);
   })
 
@@ -308,91 +312,55 @@ function commonSettingTextInclude(){
 }
 
 // 프롬프트 텍스트 내용에 따라 높이값 변화
-function commonUpdatePromptLine() {
-  const input = $('.prompt_input');
+function commonUpdatePromptAdjust() {
+  // 높이 조정을 처리하는 함수
+  function adjustHeight(element) {
+    const style = window.getComputedStyle(element);
+    const lineHeight = parseFloat(style.lineHeight) || 0;
+    const paddingTop = parseFloat(style.paddingTop) || 0;
+    const paddingBottom = parseFloat(style.paddingBottom) || 0;
+    const borderTop = parseFloat(style.borderTopWidth) || 0;
+    const borderBottom = parseFloat(style.borderBottomWidth) || 0;
 
-  // 초기 높이 및 너비 값 설정
-  const initHeight = $(input).outerHeight(); // 초기 높이값
-  const initWidth = $(input).width(); // 초기 너비값
-  const lineHeight = parseInt($(input).css('line-height'), 10); // line-height 값 가져오기 (px)
+    // 기본 높이 계산: 한 줄 높이 + 패딩 + 보더
+    const baseHeight = lineHeight + paddingTop + paddingBottom + borderTop + borderBottom;
 
-  // 텍스트를 측정하는 캔버스 생성
-  const canvas = document.createElement('canvas');
-  const context = canvas.getContext('2d');
-
-  let requestId; // requestAnimationFrame ID를 저장할 변수
-
-  // 텍스트 높이 및 너비 계산 함수
-  function updateHeightAndWidth() {
-    const text = $(input).val(); // 입력된 텍스트
-
-    // 텍스트가 비어있으면 높이를 초기값으로 되돌림
-    if (text === '') {
-      $(input).css('height', initHeight + 'px');
-      return;
-    }
-
-    // 입력 필드의 폰트 스타일을 캔버스에 설정
-    context.font = $(input).css('font');
-
-    let lines = 1; // 초기 줄 수
-    let line = '';
-    let newHeight;
-
-    // 각 단어를 처리하며 텍스트 너비 측정
-    const words = text.split(' ');
-    words.forEach(word => {
-      const checkLine = line + word + ' ';
-      const checkWidth = context.measureText(checkLine).width;
-
-      // 줄 너비가 입력 필드의 너비를 초과하면 줄바꿈
-      if (checkWidth > initWidth) {
-        lines++;
-        line = word + ' ';
-      } else {
-        line = checkLine;
-      }
-    });
-
-    // 최종 높이 계산
-    newHeight = initHeight + (lines - 1) * lineHeight;
-
-    // 높이가 다를 때만 업데이트
-    if ($(input).outerHeight() !== newHeight) {
-      $(input).css('height', newHeight + 'px');
-    }
+    // 높이를 auto로 초기화한 후 scrollHeight로 조정
+    element.style.height = 'auto';
+    element.style.height = `${Math.max(element.scrollHeight, baseHeight)}px`;
   }
 
-  // requestAnimationFrame을 통한 업데이트 함수
-  function requestUpdate() {
-    if (requestId) {
-      cancelAnimationFrame(requestId);
-    }
-    requestId = requestAnimationFrame(updateHeightAndWidth);
-  }
-
-  // 텍스트 입력 시마다 높이 및 너비 계산 (requestAnimationFrame 사용)
-  $(input).on('input', requestUpdate);
-
-  // 붙여넣기 시 공백 제거 후 높이 및 너비 계산
-  $(input).on('paste', function(event) {
-    const pasteData = event.originalEvent.clipboardData.getData('text');
-    const cleanedText = pasteData.replace(/\s+/g, ' ').trim();
-    event.preventDefault(); // 기본 붙여넣기 동작 취소
-    document.execCommand('insertText', false, cleanedText);
-
-    // 붙여넣기 후 텍스트 높이 및 너비 계산 (requestAnimationFrame 사용)
-    requestUpdate();
+  // .prompt_input에서 입력 시 높이 조정
+  $('.prompt_input').on('input', function () {
+    adjustHeight(this);
   });
 
-  // Enter 키를 눌렀을 때 기본 동작 방지
-  $(input).on('keydown', function(event) {
-    if (event.key === 'Enter') {
-      event.preventDefault(); // Enter 키 기본 동작 방지
-    }
+  // 페이지 로드 시 초기 높이 설정
+  $('.prompt_input').each(function () {
+    adjustHeight(this);
+  });
+
+  // assets 클릭 시 높이 조정
+  $('.ly_pop_assets_box').click(function(){
+    $('.prompt_input').each(function(){
+      adjustHeight(this);
+    })
+  });
+
+  // prompt_setting_input 입력시 높이 조정
+  $('.prompt_setting_input').on('input', function(){
+    $('.prompt_input').each(function(){
+      adjustHeight(this);
+    })
+  });
+
+  // 윈도우 리사이즈 시 높이 재조정
+  $(window).on('resize', function () {
+    $('.prompt_input').each(function () {
+      adjustHeight(this);
+    });
   });
 }
-
 
 // 모바일 환경에서 prompt placeholder 삭제
 function mobileRemovePlaceholder(){
@@ -428,8 +396,16 @@ function commonWorkflowHandler(){
   })
 }
 
-
-  
+// section_workflow_setting horizontal scroll event
+function desktopHorizontalScroll() {
+  const element = document.querySelector('.section_workflow_setting');
+  if (element) {
+    element.addEventListener('wheel', function (e) {
+      const delta = e.deltaY; // 마우스 휠 위/아래 방향 값
+      element.scrollLeft += delta; // 가로 스크롤 이동
+    }, { passive: true }); // passive 옵션 추가
+  }
+}
 
 
 
