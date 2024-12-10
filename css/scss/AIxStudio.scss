@@ -1,19 +1,19 @@
 // common
-@import "common/reset.scss";
-@import "common/common.scss";
-@import "common/font.scss";
+@use "common/reset.scss";
+@use "common/common.scss";
+@use "common/font.scss";
 
 // components
-@import "components/icon.scss";
-@import "components/popup.scss";
-@import "components/progress.scss";
-@import "components/original.scss";
+@use "components/icon.scss";
+@use "components/popup.scss";
+@use "components/progress.scss";
+@use "components/original.scss";
 
 // layout
-@import "layout/layout.scss";
-@import "layout/header.scss";
-@import "layout/footer.scss";
-@import "layout/dimmed.scss";
+@use "layout/layout.scss";
+@use "layout/header.scss";
+@use "layout/footer.scss";
+@use "layout/dimmed.scss";
 
 // pages
-@import "pages/main.scss";
+@use "pages/main.scss";

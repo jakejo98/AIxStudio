@@ -97,3 +97,11 @@
     background-image: url('/AIxStudio/img/icon/icon_generate_image.svg');
   }
 }
+
+.icon_prompt_reset {
+  width: 16px;
+  height: 16px;
+  &::after {
+    background-image: url('/AIxStudio/img/icon/icon_prompt_reset.svg');
+  }
+}

@@ -1,12 +1,9 @@
-export function headerHandler(){
-  rwdHandler();
+export function header(){
+  headerGnb();
 }
 
-function rwdHandler(){
-  rwdHeaderGnb();
-}
 // 반응형 헤더 메뉴 활성화 / 비활성화
-function rwdHeaderGnb(){
+function headerGnb(){
   const headerGnbBtn = $('.btn_header_gnb');
   const headerGnbCloseBtn = $('.btn_header_gnb_close');
   const headerGnbWrap = $('.header_inner.rwd .header_gnb_wrap');
