@@ -1,0 +1,25 @@
+body,
+input,
+select,
+textarea,
+button,
+pre {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  color: #212121;
+  word-break: keep-all;
+}
+.blind,
+caption span,
+legend {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+

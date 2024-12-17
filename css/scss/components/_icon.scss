@@ -1,0 +1,157 @@
+.common_icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: middle;
+  &::after {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: center / 100% no-repeat;
+    content: "";
+  }
+}
+
+.icon_logo_black {
+  @media screen and (max-width: 767px) {
+    width: 100px;
+    height: 29px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1039px) {
+    width: 100px;
+    height: 29px;
+  }
+  @media screen and (min-width: 1040px) {
+    width: 127px;
+    height: 20px;
+  }
+  &::after {
+    background-image: url('../../../img/icon/icon_logo_black.svg');
+  }
+}
+
+.icon_logo_white {
+  @media screen and (max-width: 767px) {
+    width: 100px;
+    height: 29px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1039px) {
+    width: 100px;
+    height: 29px;
+  }
+  @media screen and (min-width: 1040px) {
+    width: 127px;
+    height: 20px;
+  }
+  &::after {
+    background-image: url('../../../img/icon/icon_logo_white.svg');
+  }
+}
+
+.icon_mypage {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_mypage.svg');
+  }
+}
+
+.icon_shopping {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_shopping.svg');
+  }
+}
+
+.icon_prompt_setting_black {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_prompt_setting_black.svg');
+  }
+}
+
+.icon_prompt_setting_white {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_prompt_setting_white.svg');
+  }
+}
+
+.icon_close {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_close.svg');
+  }
+}
+
+.icon_menu {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_menu.svg');
+  }
+}
+
+.icon_generate_image_black {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_generate_image_black.svg');
+  }
+}
+
+.icon_generate_image_white {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_generate_image_white.svg');
+  }
+}
+
+.icon_theme_light {
+  width: 20px;
+  height: 20px;
+  &::after {
+    background-image: url('../../../img/icon/icon_theme_light.svg');
+  }
+}
+
+.icon_theme_dark {
+  width: 20px;
+  height: 20px;
+  &::after {
+    background-image: url('../../../img/icon/icon_theme_dark.svg');
+  }
+}
+
+.icon_prompt_reset {
+  width: 16px;
+  height: 16px;
+  &::after {
+    background-image: url('../../../img/icon/icon_prompt_reset.svg');
+  }
+}
+
+.icon_original_image_close {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_original_image_close.svg');
+  }
+}
+
+.icon_original_image_save {
+  width: 24px;
+  height: 24px;
+  &::after {
+    background-image: url('../../../img/icon/icon_original_image_save.svg');
+  }
+}

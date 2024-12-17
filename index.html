@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIxStudio</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/AIxStudio.css">
+  <!-- CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script type="module" src="js/script.js"></script>
+</head>
+<body>
+  <div class="common_wrap">
+    <main id="content" class="common_container main_page" role="main">
+      <!-- header -->
+      <div id="header"></div>
+      <!-- prompt -->
+      <section class="common_section section_prompt">
+        <div class="section_heading">
+          <h2 class="section_title">Wish and Dream</h2>
+          <p class="section_sub_title">
+            "Turn your deepest wishes into stunning visual masterpieces,<br>
+            where imagination and creativity come together to create something extraordinary."
+          </p>
+        </div>
+        <!-- prompt -->
+        <div class="prompt">
+          <form class="prompt_form">
+            <label for="prompt_value"></label>
+            <textarea class="prompt_input" name="prompt_input" id="prompt_input" rows="1"></textarea>
+            <button class="btn_prompt_reset">
+              <span class="common_icon icon_prompt_reset"></span>
+            </button>
+          </form>
+          <button class="btn_prompt_setting">
+            <span class="common_icon icon_prompt_setting_black">
+              <span class="blind">프롬프트 세팅 활성화</span>
+            </span>
+          </button>
+          <button type="button" class="btn_generate_image">
+            <span class="common_icon icon_generate_image_black">
+              <span class="blind">Generate</span>
+            </span>
+            <span class="btn_generate_image_text">Generate</span>
+          </button>
+        </div>
+      </section>
+      <!-- workflow setting -->
+      <section class="common_section section_workflow_setting">
+        <div class="workflow_setting">
+          <ul class="workflow_setting_list">
+            <li class="workflow_setting_item">
+              <button class="btn_workflow_setting">
+                <div class="workflow_setting_img_box">
+                  <img src="img/workflow/setting_workflow_img_duct_01.png" alt="duct_01" class="workflow_setting_img">
+                </div>
+                <span class="workflow_setting_title">duct_01</span>
+              </button>
+            </li>
+            <li class="workflow_setting_item">
+              <button class="btn_workflow_setting">
+                <div class="workflow_setting_img_box">
+                  <img src="img/workflow/setting_workflow_img_illust_01.png" alt="illust_01" class="workflow_setting_img">
+                </div>
+                <span class="workflow_setting_title">illust_01</span>
+              </button>
+            </li>
+            <li class="workflow_setting_item">
+              <button class="btn_workflow_setting">
+                <div class="workflow_setting_img_box">
+                  <img src="img/workflow/setting_workflow_img_flux_01.png" alt="flux_01" class="workflow_setting_img">
+                </div>
+                <span class="workflow_setting_title">flux_01</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- prompt setting -->
+      <section class="common_section section_prompt_setting">
+        <div class="prompt_setting">
+          <ul class="prompt_setting_list">
+            <li class="prompt_setting_item">
+              <label for="subject" class="prompt_setting_label">Subject</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="subject" name="subject" placeholder="[SUBJECT], [IMPORTANT FEATURE], [MORE DETAILS], [POSE OR ACTION]">
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="background" class="prompt_setting_label">Background</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="background" name="background" placeholder="Enter background">
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="style" class="prompt_setting_label">Style</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="style" name="style">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="framing" class="prompt_setting_label">Framing</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="framing" name="framing">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="lighting" class="prompt_setting_label">Lighting</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="lighting" name="lighting">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="camera_angle" class="prompt_setting_label">Camera angle</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="camera_angle" name="camera_angle">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="camera_properties" class="prompt_setting_label">Camera properties</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="camera_properties" name="camera_properties">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="film_types" class="prompt_setting_label">Film types</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="film_types" name="film_types">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="lenses" class="prompt_setting_label">Lenses</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="lenses" name="lenses">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="filter_effects" class="prompt_setting_label">Filters effects</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="filters_effects" name="filters_effects">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+            <li class="prompt_setting_item">
+              <label for="photographers" class="prompt_setting_label">Photographers</label>
+              <div class="prompt_setting_input_box">
+                <input type="text" class="prompt_setting_input" id="photographers" name="photographers">
+                <button type="button" class="btn_prompt_setting_select">Select</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- generate image -->
+      <section class="common_section section_generate"></section>
+      <!-- footer -->
+      <div id="footer">
+      </div>
+    </main>
+  </div>
+  <!-- ly_pop_wrap -->
+  <!-- style -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Style</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Abstract</span>
+              <p class="ly_pop_assets_explain">Abstract photography captures imaginative non- representational subjects creatively using visual elements like color and texture. For strong abstract images in Stable Diffusion weight the tag at (abstract:1.4).</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Analogue</span>
+              <p class="ly_pop_assets_explain">Analogue photography uses film and traditional developing processes to achieve a classic vintage look with grain, fading discoloration, light leaks, and textured imperfections absent in slick digital images. Useful for a generic vintage look.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Beauty</span>
+              <p class="ly_pop_assets_explain">Beauty photography involves capturing elegant, stylized portraits of models to highlight and celebrate cosmetics glamor, and aesthetically pleasing subjects in a romanticized way. Combine with studio themed lighting prompts.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Candied</span>
+              <p class="ly_pop_assets_explain">Candid photography involves taking spontaneous, unposed shots of people behaving naturally in public settings without their knowledge to capture authentic moments. Add actions to your prompt and a public setting to make this work well.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_05.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Documentary photography</span>
+              <p class="ly_pop_assets_explain">Documentary photography captures real world subjects environments, events, and people in their authentic contexts to provide visual insight into culturally significant topics. This can create very realistic skin & is effective in black and white.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_06.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Glamour photography</span>
+              <p class="ly_pop_assets_explain">Glamour photography involves stylized, idealized portraits of models showcasing cosmetics, seductive poses, and sensual allure to convey an aspirational image of beauty. You may want to use NSFW in your negative prompts or this will create nudes.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_07.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">high fashion photography</span>
+              <p class="ly_pop_assets_explain">High fashion photography promotes cutting-edge designer clothing and accessories using inventive, avant garde artistic approaches, striking poses, and models to showcase an aspirational elegance. Also use catwalk as a setting tag.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_08.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Instant photo</span>
+              <p class="ly_pop_assets_explain">Instant photos have a retro, vintage Polaroid look with faded colors, uneven exposures, imperfections, and blotchy shadows created immediately when taken without development. Weight the tag at (instant photo:1.4). Add soft focus & a film type tag.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_09.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Large format</span>
+              <p class="ly_pop_assets_explain">Large format photography uses cameras with film sizes of 4x5 inches or larger to achieve incredibly high resolution, sharpness fine grain, and detailed photos suitable for large prints. this tag gives sharp images but with an organic film grain.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_10.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Lifestyle photography</span>
+              <p class="ly_pop_assets_explain">Lifestyle photography involves capturing candid, documentary- style shots of people, in everyday home or domestic situations to convey personality and meaningful moments. Use with action and setting tags to create stock photo style images.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_11.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Modernist photography</span>
+              <p class="ly_pop_assets_explain">Modernist photography is characterized by simple, geometric compositions, minimalism, & emphasis on shape. In Stable Diffusion, however, it creates a 1960’s aesthetic more in line with Modernist architecture.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_12.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Paparazzi</span>
+              <p class="ly_pop_assets_explain">Paparazzi photography involves candid shots of celebrities going about daily life without permission, often dangerously or unethically, to capture scandalous, sensationalist, or intimate images.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_13.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Pictorialist style</span>
+              <p class="ly_pop_assets_explain">Pictorialist photography from the 1800’s mimics impressionist paintings using soft focus, diffused lighting, to make dreamlike romanticized images. Add soft focus, dreamy haze &amp; black and white tags to enhance. Use a weight of (pictorialist:1.5).</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_14.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Polaroid</span>
+              <p class="ly_pop_assets_explain">Polaroid photography uses instant film that develops prints immediately, producing retro-style images with faded color uneven exposures, shadows, and imperfections absent in modern digital photos. Unlike instant this tag has softer images.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_15.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Pinhole photography</span>
+              <p class="ly_pop_assets_explain">Pinhole photography uses a camera without a lens that has a tiny pinhole aperture, creating soft focus dreamlike images with nearly infinite depth of field but requiring long exposures.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_16.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Street fashion photography</span>
+              <p class="ly_pop_assets_explain">Street fashion photography captures candid shots of stylish real people in urban settings wearing creative street style outfits and designs outside of studios or runways.</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_17.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Surrealist</span>
+              <p class="ly_pop_assets_explain">Surrealist photography creates fantastical, dreamlike images using imaginative composites, collages, darkroom manipulations, and unusual juxtapositions to convey subconscious realities. Needs a weight of (surrealist photo:1.5).</p>
+            </div>
+          </li>          
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/style/style_18.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Tintype</span>
+              <p class="ly_pop_assets_explain">Tintype photography involves capturing direct positive images onto lacquered iron plates, producing antique looking photos with high contrast, dark muted tones, and ghostly faded faces. High weights this will always make subjects look old fashioned.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- framing -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Framing</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/framing/framing_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Close up on face</span>
+              <p class="ly_pop_assets_explain">Specifying “close up on face” in a portrait prompt frames tight on facial features to reveal emotion, identity, and fine details. Use it to highlight expressions and direct focus exclusively on the subject.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/framing/framing_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Full body</span>
+              <p class="ly_pop_assets_explain">Specifying “full body” frames the entire subject to showcase action, attire, and context. Use it for dynamic poses, to emphasize a key outfit or to establish a scene.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/framing/framing_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Head shot</span>
+              <p class="ly_pop_assets_explain">Head shots tightly frame the face to spotlight identity, facial features, and expressive emotions. Use “head shot” to focus attention on nuanced details of the face and head. This framing includes more of the hair and shoulders.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/framing/framing_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Upper body</span>
+              <p class="ly_pop_assets_explain">Upper body framing shows the subject from chest or waist up focusing on pose, expression, clothing, and hand gestures while still providing some environmental context.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <!-- lighting -->
+  <div class="ly_pop_wrap"> 
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Lighting</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Bounced lighting</span>
+              <p class="ly_pop_assets_explain">Bounced lighting refers to soft, diffuse illumination created by reflecting light off surrounding surfaces like walls and ceilings rather than directly lighting the subject from the source. This can be prompted by specifying “soft bounced lighting”.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Candlelight</span>
+              <p class="ly_pop_assets_explain">Candlelight produces a warm, intimate, flickering glow with subtle dancing shadows and highlights that can be prompted by specifying a scene lit solely by candles. This can be combined with another lighting style called chiaroscuro.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Chiaroscuro</span>
+              <p class="ly_pop_assets_explain">Chiaroscuro lighting refers to high contrast illumination with strong shadows juxtaposed against bright highlights, which creates a dramatic, textured look. In Stable Diffusion this can create a photorealistic Renaissance painting style.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Cinematic lighting</span>
+              <p class="ly_pop_assets_explain">Cinematic lighting uses dramatic high-contrast keys, backlights and rims to create moody Hollywood style portrait lighting effects that can be prompted in Stable Diffusion by specifying “cinematic lighting” with strong side key lights or rim lighting.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_05.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Soft diffused lighting</span>
+              <p class="ly_pop_assets_explain">Diffused lighting is soft, low contrast illumination from a large diffusing light source that creates gentle shadows and can be prompted in Stable Diffusion by specifying a scene uses “soft diffused lighting” to create a smooth, even lighting effect.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_06.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Edge lighting</span>
+              <p class="ly_pop_assets_explain">Edge lighting is side lighting placed behind a subject to produce a bright outlined “rim” effect around their silhouette which can be prompted in Stable Diffusion by specifying “dramatic edge lighting” to make the subject vividly stand out.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_07.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Fill lighting</span>
+              <p class="ly_pop_assets_explain">Fill lighting provides secondary illumination from the opposite side of the key light to soften shadows and balance out contrast which can be prompted in Stable Diffusion by specifying “soft fill lighting” to gently brighten shaded areas of a subject.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_08.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Flash photography</span>
+              <p class="ly_pop_assets_explain">This utilizes a burst of bright, instant light that can create a sharp yet stylistic look, which can be prompted in Stable Diffusion with “direct flash photography” or “harsh flash lighting”. Too high a weight will add the flash symbol to everything! So be warned.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_09.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">God rays</span>
+              <p class="ly_pop_assets_explain">God rays lighting creates dramatic beams of light streaming through particulate in the air which can be prompted by specifying “radiant god rays” or “light beams streaming through haze” to generate an atmospheric, mystical lighting effect.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_10.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Golden hour</span>
+              <p class="ly_pop_assets_explain">Golden hour lighting refers to the warm, reddish hue and softened shadows created by the low angle of the sun at sunrise or sunset, which can be prompted by specifying “warm golden hour lighting” to generate a romantic, magical ambience.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_11.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Hard lighting</span>
+              <p class="ly_pop_assets_explain">Hard lighting refers to harsh, undiffused illumination that creates strong shadows and high contrast, which can be prompted by specifying a scene uses (hard lighting:1.4) to portray bold shapes and textures and a dramatic mood.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_12.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">High key lighting</span>
+              <p class="ly_pop_assets_explain">High key studio lighting employs bright, even illumination against a white backdrop to create a clean, modern look with some contrast but minimal shadows in fashion and editorial photography. Prompted by specifying “high key brightly lit”</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_13.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Low key lighting</span>
+              <p class="ly_pop_assets_explain">Low key lighting uses dramatic, moody illumination with shadows and dark, muted tones, typically prompted by specifying a “low key lighting” scene with minimal fill lighting to create higher contrast intrigue and a mysterious mood.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_14.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Natural lighting</span>
+              <p class="ly_pop_assets_explain">Natural lighting utilizes the sun or other ambient light sources to gently illuminate a scene and can be prompted by specifying “soft natural lighting” to create a realistic, organic mood and avoid the artificial look of studio lighting in one sentence.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_15.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Neon lighting</span>
+              <p class="ly_pop_assets_explain">Neon lighting employs the vibrant, saturated colors of neon tube lights which can create a lively, futuristic, or stylized look typically prompted by specifying a scene uses “bright neon lighting” to generate a colorful, artificial lighting effect.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_16.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Overcast lighting</span>
+              <p class="ly_pop_assets_explain">Overcast lighting refers to the soft, even, low contrast illumination on cloudy days, which can be prompted by specifying “overcast flat lighting” to simulate the muted shadows and tone of an overcast sky.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_17.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Rim lighting</span>
+              <p class="ly_pop_assets_explain">Rim lighting is a strong back light placed behind a subject to create an outlined “rim” or glow effect around their silhouette typically prompted by specifying “dramatic rim lighting” to make the subject stand out vividly from the background</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_18.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Shadow play</span>
+              <p class="ly_pop_assets_explain">Shadow play lighting creates dramatic results by strategically placing shadows and shafts of light, typically prompted by specifying “creative shadow play” to generate high contrast and visual intrigue in a scene.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_19.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Silhouette lighting</span>
+              <p class="ly_pop_assets_explain">Creates a silhouette effect by placing the subject or object in front of a bright backlight, usually prompted by specifying “silhouetted against the bright sky/window/light” to generate a bold darkened subject profiled against the background.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lighting/lighting_20.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Soft lighting</span>
+              <p class="ly_pop_assets_explain">Soft lighting minimizes shadows by using a large, diffused light source and can be prompted in Stable Diffusion by specifying “soft lighting” to create a gentle, smooth illumination that reduces texture and contrast</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- camera angle -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Camera angle</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_angle/camera_angle_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Dutch angle</span>
+              <p class="ly_pop_assets_explain">A Dutch angle refers to tilting the camera diagonally to create a skewed perspective, typically prompted in Stable Diffusion by specifying “shot from a Dutch angle” to make the composition appear more dynamic or convey unease. Use with high weight.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_angle/camera_angle_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">From above/high angle</span>
+              <p class="ly_pop_assets_explain">Specifying a “high angle” or shooting “from above” refers to positioning the camera above the subject pointing down, which can frame the subject from an elevated viewpoint to emphasize smallness, vulnerability or isolation within the scene.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_angle/camera_angle_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">From below/low angle</span>
+              <p class="ly_pop_assets_explain">Specifying a “low angle” or shooting “from below” refers to positioning the camera below the subject pointing up, which can prompt SD to frame the subject from a low viewpoint to exaggerate power, height and dominance within the scene.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_angle/camera_angle_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Eye level</span>
+              <p class="ly_pop_assets_explain">Specifying an “eye level” camera angle refers to positioning the camera at the same height as the subject’s eyes, typically prompted in Stable Diffusion to create a direct perspective that conveys neutrality and intimacy with the subject.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <!-- camrea properties -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Camera properties</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Aaton LTR</span>
+              <p class="ly_pop_assets_explain">The Aaton LTR 54 was a highly adaptable S16 cinema film camera which can be prompted in Stable Diffusion by specifying “shot on Aaton LTR” to emulate its natural perspective, subtle vignette look, and the texture of film.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">ARRI ALEXA 65</span>
+              <p class="ly_pop_assets_explain">A high-end 65mm digital cinema camera known for its extremely high resolution and dynamic range, which can be prompted by specifying “shot on ALEXA 65” for detailed, crisp images with smooth tonality similar to its large format look.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Bolex H16</span>
+              <p class="ly_pop_assets_explain">The Bolex H16 was a versatile, hand-cranked 16mm film camera which can be prompted in Stable Diffusion by specifying “shot on Bolex H16” to emulate its vintage 16mm look, natural vignette and handheld footage aesthetic.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">RED Digital Cinema Camera</span>
+              <p class="ly_pop_assets_explain">The RED Digital Cinema Camera produces high-resolution digital footage with customizable color science, which can be simulated by specifying “shot on RED camera” desired RED image attributes include wide dynamic range and crisp details.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_05.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Canon EOS 5D</span>
+              <p class="ly_pop_assets_explain">The Canon EOS 5D pioneered large sensor digital photography with cinema-quality shallow depth of field, which can be prompted with “shot on Canon EOS 5D” & referencing desired attributes like smooth background bokeh.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_06.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Fujjfilm X-T4</span>
+              <p class="ly_pop_assets_explain">The Fujifilm X-T4 mirrorless camera produces images with Fujifilm’s acclaimed color science and film simulation modes which can be simulated by prompting desired attributes like saturated colors, high contrast tones, and natural grain.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_07.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">GoPro Hero</span>
+              <p class="ly_pop_assets_explain">The GoPro Hero action camera captures ultra wide-angle point- of-view footage with a bold fisheye look that can be creatively prompted using “(shot on GoPro Hero:1.4)”.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_08.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Hasselblad X1D II</span>
+              <p class="ly_pop_assets_explain">A medium format camera that produces extremely high res images with tons of detail and Hasselblad’s iconic tonality, which can be simulated by prompting “shot on Hasselblad X1D II” with tags like fine texture, smooth color gradations.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_09.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Lumix GH5</span>
+              <p class="ly_pop_assets_explain">The Panasonic Lumix GH5 is a Micro Four Thirds mirrorless camera known for its versatility in high bitrate 4K video, which can be creatively prompted with “shot on Lumix GH5” and tags like, cinematic bokeh, dynamic range, and vibrant colors.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_10.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Pentax 645Z</span>
+              <p class="ly_pop_assets_explain">The Pentax 645Z medium format DSLR produces ultra high resolution images with tons of detail and incredible dynamic range, perfect for prompting “shot on Pentax 645Z” with rich textures, and smooth wide tonality.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_11.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Sony A7III</span>
+              <p class="ly_pop_assets_explain">The Sony A7III full frame mirrorless camera offers immense flexibility with its advanced autofocus, prompt using “shot on Sony A7III”.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_12.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Lecia T</span>
+              <p class="ly_pop_assets_explain">The Leica T mirrorless APS-C system delivers Leica’s renowned image quality in a sharp modern form factor. Prompt with “shot on Leica T”. Add tags like smooth skin tone, Leica colors, shallow depth of field and vignetting.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_13.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Diana F+</span>
+              <p class="ly_pop_assets_explain">This plastic toy camera has a cult following for its dreamy soft focus and vignetted images perfect for images with a hazy retro film aesthetic. Use with a weight of 1.6, film grain, dreamy haze blur and light leak tags. High-Res fix will reduce the effect.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_14.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Hasselblad 500CM</span>
+              <p class="ly_pop_assets_explain">The Hasselblad 500CM medium format film camera produces images with incredible detail and tonality, perfect for prompting ultra-high resolution shots with subtle smooth transitions between colors and tones.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_15.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">HOLGA 120n</span>
+              <p class="ly_pop_assets_explain">The Holga 120N toy film camera has a cult following for its vignetted, blurry, low-fi dreamlike images with light leaks perfect for prompting imaginative impressions with an unpredictable retro aesthetic.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_16.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Kodak Brownie</span>
+              <p class="ly_pop_assets_explain">The Kodak Brownie box camera has an iconic vintage look with square medium format images, dark vignettes, soft focus and muted color tones perfect for prompting a nostalgic, retro stylistic perspective.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_17.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Kodak Funsaver</span>
+              <p class="ly_pop_assets_explain">This plastic toy camera has a cult following for its dreamy soft focus and vignetted images perfect for images with a hazy retro film aesthetic. Use with a weight of 1.6, film grain, dreamy haze blur and light leak tags. High-Res fix will reduce the effect.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_18.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Leica M3</span>
+              <p class="ly_pop_assets_explain">The Leica M3 rangefinder camera is known for its discreet operation, quiet shutter release, and exceptional image quality that enables prompting classic Leica tonality, microcontrast, and perspective from its superb prime lenses.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_19.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Rolleiflex</span>
+              <p class="ly_pop_assets_explain">The Rolleiflex twin lens reflex medium format camera produces images with incredible detail and tonality perfect for prompting ultra-sharp photos with a distinctively intimate square perspective.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/camera_properties/camera_properties_20.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Polaroid SX-70</span>
+              <p class="ly_pop_assets_explain">The Polaroid SX-70 instant camera has a signature square format with flat, muted colors, distinctive light streaks, and immediate tangible prints perfect for prompting nostalgic analog images with a faded retro aesthetic.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <!-- film types -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Film types</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Agfa vista</span>
+              <p class="ly_pop_assets_explain">Agfa Vista was an inexpensive color print film known for its wild oversaturated colors, making it perfect for prompting images with an intensely vibrant, saturated aesthetic.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Cinestill 800T</span>
+              <p class="ly_pop_assets_explain">Cinestill 800T is a tungsten-balanced 35mm motion picture film adapted for still photography, producing a signature low-fi crossover look with halation light leaks and rich cinematic colors that can be prompted by specifying its classic film attributes.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Ektar 100</span>
+              <p class="ly_pop_assets_explain">Kodak Ektar 100 is a fine grain 35mm color negative film prized for its incredibly saturated colors and clean sharpness, ideal for prompting images with vivid, true-to-life color rendition and detail.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Film grain</span>
+              <p class="ly_pop_assets_explain">Film grain refers to the visible texture and particles inherent in analog photographic film, which can be prompted by specifying desired qualities like “prominent grain”, “muted low grain”, or “fine grain” to achieve different textured retro film looks.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_05.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Ilford HP5 Plus</span>
+              <p class="ly_pop_assets_explain">Ilford HP5 Plus is an ISO 400 black and white film prized for its versatility, and characteristic medium grain, which makes it great for prompting flexible black and white images with a stylized classic film grain look. Weight needs to be over 1.6.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_06.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Kodak Vision3</span>
+              <p class="ly_pop_assets_explain">Kodak Vision3 is a professional 35mm motion picture camera film stock designed to deliver rich, vibrant color and fine grain ideal for prompting cinematic images and footage with robust color rendition and smooth textures.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_07.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Kodak Vision3 IMAX</span>
+              <p class="ly_pop_assets_explain">Kodak Vision3 IMAX is a large format 65mm color negative film specifically engineered for IMAX cameras to produce unparalleled levels of fine detail perfect for prompting crisp intricate, high-resolution images with tons of visual information.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_08.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Lomochrome color film</span>
+              <p class="ly_pop_assets_explain">Lomography Chromatic film, or Lomachrome, is a 35mm ISO 800 color negative film known for its vivid and unpredictable color shifts. Use this prompt with the Holga 120n or Diana F+ camera tags to make it work.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_09.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Porta 160</span>
+              <p class="ly_pop_assets_explain">Kodak Portra 160 is a 160 ISO color negative film celebrated for its saturated colors and flattering skin tones, ideal for portrait prompts requiring smooth tones and natural color rendition.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_10.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Tri-X 400</span>
+              <p class="ly_pop_assets_explain">Kodak Tri-X 400 is a classic ISO 400 monochromatic film distinguished by its rich blacks, broad exposure latitude, and distinct medium-sized grain, use with high weight of 1.8</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_11.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Velvia 100</span>
+              <p class="ly_pop_assets_explain">Fujifilm Velvia 100 is a bright, vivid color reversal film known for its incredible saturation and fine grain, ideal for prompting brilliant landscape images with lush, dramatic colors and tons of detail.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/film_types/film_types_12.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Fujicolor Pro</span>
+              <p class="ly_pop_assets_explain">Fujicolor Pro film is known for its natural, accurate, and well- balanced color reproduction perfect for prompting images with a realistic and subtle Fujifilm color palette.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <!-- lenses -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Lenses</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lenses/lenses_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">50mm</span>
+              <p class="ly_pop_assets_explain">A 50mm prime lens provides a natural field of view similar to human vision, useful for prompting realistic perspective in documentary or portrait photography styles</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lenses/lenses_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">8mm Fisheye Lens</span>
+              <p class="ly_pop_assets_explain">A fisheye lens captures a spherical 180-degree field of view with strong circular barrel distortion perfect for prompting an immersive hemispherical perspective.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/lenses/lenses_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Voigtländer Nokton 50mm f1.1</span>
+              <p class="ly_pop_assets_explain">produces dreamy images with extremely shallow depth of field and buttery smooth bokeh</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <!-- filters effects -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Filters effects</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Black and white</span>
+              <p class="ly_pop_assets_explain">Removing color saturation creates monochromatic images focused on light, shapes, texture and mood.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Color filter</span>
+              <p class="ly_pop_assets_explain">Change color to the color you want to adds a tint over the image to darken skies similar to using an actual colored glass filter on a film camera lens.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Bokeh</span>
+              <p class="ly_pop_assets_explain">Buttery smooth, aesthetically blurred out-of-focus backgrounds artistically isolate the main subject by minimizing distractions.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Desaturated</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_05.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Grunge filter</span>
+              <p class="ly_pop_assets_explain">Removing color vibrancy and overlaying film grain, stains and defects creates a worn weathered, grungy texture.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_06.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Dreamy haze</span>
+              <p class="ly_pop_assets_explain">Ethereal, romantic imagery emerges through soft focus light haze, subtle distortions and a detached, floating perspective.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_07.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Glitch style</span>
+              <p class="ly_pop_assets_explain">Manipulating or corrupting digital imagery to intentionally introduce distortions, artifacts colors shifts, banding, and other digital aberrations</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_08.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Hologram effect</span>
+              <p class="ly_pop_assets_explain">Creates a holographic lighting effect to clothing and backgrounds</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_09.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">(Infrared filter:1.4)</span>
+              <p class="ly_pop_assets_explain">Emulates the extreme color shifts of infrared photography dominated by pinkish hues from foliage and skies to uniquely reinterpret reality.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_10.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Lens flare</span>
+              <p class="ly_pop_assets_explain">Vivid polygonal lens flares stylize the scene by adding striking bursts of light as if beams were intersecting the camera optics.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_11.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Sepia tone</span>
+              <p class="ly_pop_assets_explain">Warm antique sepia pigment toning imbues a nostalgic vintage aesthetic. Use with a low weight to avoid your subject being historical.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_12.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Soft focus</span>
+              <p class="ly_pop_assets_explain">Intentionally diffusing sharpness through spherical aberration lends a romantic, dreamy impression.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_13.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Solarized</span>
+              <p class="ly_pop_assets_explain">Partially inverting the tonal range by blocking shadows creates a surreal duotone look.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_14.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Long exposure</span>
+              <p class="ly_pop_assets_explain">Blurring any motion conveys the passage of time and artistic intentionality through extended exposure techniques.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_15.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">ND filter</span>
+              <p class="ly_pop_assets_explain">Neutral density filters reduce incoming light levels, allowing slower shutter speeds to smoothly capture and etherealize motion.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_16.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Overexposed</span>
+              <p class="ly_pop_assets_explain">Increasing exposure washes out imagery with bright whites, pure hues, and solarized effects to focus on light and color.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_17.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Technicolor</span>
+              <p class="ly_pop_assets_explain">Mimicking the saturated look of old Technicolor film processes through vibrant, dramatic colors.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_18.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Underexposed</span>
+              <p class="ly_pop_assets_explain">Decreasing exposure mutes the image with dark shadows and somber tones for mysterious low key effects.</p>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/filters_effects/filters_effects_19.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Vignette</span>
+              <p class="ly_pop_assets_explain">Framing the central subject by gradually darkening the outer corners and edges puts emphasis on the main focus.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <!-- photographers -->
+  <div class="ly_pop_wrap">
+    <div class="dimmed"></div>
+    <div class="ly_pop">
+      <div class="ly_pop_heading">
+        <strong class="ly_pop_title">Photographers</strong>
+        <button type="button" class="btn_ly_pop_close">
+          <span class="common_icon icon_prompt_setting_close">
+            <span class="blind">창닫기</span>
+          </span>
+        </button>
+      </div>
+      <div class="ly_pop_assets">
+        <ul class="ly_pop_assets_list">
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_01.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Alberto Seveso</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_02.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Alex Timmermans</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_03.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Alfred Stieglitz</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_04.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Ando Fuchs</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_05.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Anne Brigman</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_06.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">August Sander</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_07.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Brandon Woelfel</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_08.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Chris Friel</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_09.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">David LaChapelle</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_10.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Eugene Atget</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_11.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Garry Winograd</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_12.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">George Hurrell</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_13.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Germaine Krull</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_14.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Hans Bellmer</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_15.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Hayao Miyazaki</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_16.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">James Bidgood</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_17.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Kim Keever</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_18.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Lee Friedlander</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_19.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Liam Wong</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_20.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Lotte Reiniger</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_21.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Martin Schoeller</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_22.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Mickalene Thomas</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_23.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Miko Lagerstedt</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_24.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Miles Aldridge</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_25.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Misha Gordin</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_26.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Nan Goldin</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_27.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Nathan Wirth</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_28.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Nick Knight</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_29.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Oleg Oprisco</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_30.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Oskar Fischinger</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_31.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Paolo Roversi</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_32.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Paul Barson</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_33.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Richard Avedon</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_34.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Tim Walker</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_35.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Tyler Shields</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_36.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Walker Evans</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_37.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Wes Anderson</span>
+            </div>
+          </li>
+          <li class="ly_pop_assets_item">
+            <div class="ly_pop_assets_box">
+              <img src="/img/assets/photographers/photographers_38.jpg" class="ly_pop_assets_img">
+              <span class="ly_pop_assets_type">Yousuf Karsh</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div> 
+  <script src="/js/comfy/comfy.js"></script>
+</body>
+</html>

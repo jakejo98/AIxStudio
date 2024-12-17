@@ -1,0 +1,218 @@
+// 모바일
+@media screen and (max-width: 767px) {
+  .common_container {
+    // 다크 모드
+    &.dark {
+      & .common_footer {
+        background-color: #1E1E1E;
+        & .footer_copy {
+          color: #FFFFFF;
+        }
+        & .footer_content {
+          color: #FFFFFF;
+        }
+        & .footer_util {
+          border-top: 1px solid #636363;
+          border-bottom: 1px solid #636363;
+          & .footer_util_list {
+            & .footer_util_item {
+              & .footer_util_link {
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+    // 라이트 모드
+    .common_footer {
+      padding: 40px 20px;
+      background-color: #F7F9FC;
+      & .footer_copy {
+        padding-bottom: 18px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+      & .footer_content {
+        display: flex;
+        flex-direction: column;
+        & .footer_company {
+          & .company_info {
+            & .company_info_list {
+              & .company_info_item {
+                font-size: 12px;
+                line-height: 20px;
+              }
+            }
+          }
+          & .company_contact {
+            & .company_contact_list {
+              & .company_contact_item {
+                font-size: 12px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+        & .footer_util {
+          margin-top: 16px;
+          border-top: 1px solid #DDDDDD;
+          border-bottom: 1px solid #DDDDDD;
+          & .footer_util_list {
+            display: flex;
+            justify-content: center;
+            & .footer_util_item {
+              & .footer_util_link {
+                padding: 10px 12px;
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 태블릿
+@media screen and (min-width: 768px) and (max-width: 1039px) {
+  .common_container {
+    &.dark {
+      & .common_footer {
+        background-color: #1E1E1E;
+        & .footer_copy {
+          color: #FFFFFF;
+        }
+        & .footer_content {
+          color: #FFFFFF;
+        }
+        & .footer_util {
+          & .footer_util_list {
+            & .footer_util_item {
+              & .footer_util_link {
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+    & .common_footer {
+      padding: 40px 20px;
+      background-color: #F7F9FC;
+      & .footer_copy {
+        padding-bottom: 18px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+      & .footer_content {
+        display: flex;
+        justify-content: space-between;
+        & .footer_company {
+          & .company_info {
+            & .company_info_list {
+              & .company_info_item {
+                font-size: 12px;
+                line-height: 20px;
+              }
+            }
+          }
+          & .company_contact {
+            & .company_contact_list {
+              & .company_contact_item {
+                font-size: 12px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+        & .footer_util {
+          & .footer_util_list {
+            & .footer_util_item {
+              &:not(:last-of-type) {
+                margin-bottom: 6px;
+              }
+              & .footer_util_link {
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 데스크탑
+@media screen and (min-width: 1040px) {
+  .common_container {
+    &.dark {
+      & .common_footer {
+        background-color: #1E1E1E;
+        & .footer_copy {
+          color: #FFFFFF;
+        }
+        & .footer_content {
+          color: #FFFFFF;
+        }
+        & .footer_util {
+          & .footer_util_list {
+            & .footer_util_item {
+              & .footer_util_link {
+                color: #FFFFFF;
+              }
+            }
+          }
+        }
+      }
+    }
+    & .common_footer {
+      padding: 50px 80px;
+      background-color: #F7F9FC;
+      & .footer_copy {
+        padding-bottom: 18px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+      }
+      & .footer_content {
+        display: flex;
+        justify-content: space-between;
+        & .footer_company {
+          & .company_info {
+            margin-bottom: 30px;
+            & .company_info_list {
+              & .company_info_item {
+                font-size: 12px;
+                line-height: 20px;
+              }
+            }
+          }
+          & .company_contact {
+            & .company_contact_list {
+              & .company_contact_item {
+                font-size: 12px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+        & .footer_util {
+          & .footer_util_list {
+            & .footer_util_item {
+              &:not(:last-of-type) {
+                margin-bottom: 6px;
+              }
+              & .footer_util_link {
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
