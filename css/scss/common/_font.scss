@@ -70,18 +70,18 @@
 @font-face {
   font-family: 'Helvetica';
   font-weight: 700;
-  srcrl('../../font/Helvetica-Bold.woff') format('woff');
-  // src: ur../../font/Helvetica-Bold.woff2') format('woff2');
+  src: url('../font/Helvetica-Bold.woff') format('woff');
+  // src: url('../font/Helvetica-Bold.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Helvetica';
   font-weight: 400;
-  srcrl('../../font/Helvetica-Regular.woff') format('woff');
-  // src: ur../../font/Helvetica-Regular.woff2') format('woff2');
+  src: url('../font/Helvetica-Regular.woff') format('woff');
+  // src: url('../font/Helvetica-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Helvetica';
   font-weight: 100;
-  srcrl('../font/Helvetica-Light.woff') format('woff');
-  // src: url('../../font/Helvetica-Light.woff2') format('woff2');
+  src: url('../font/Helvetica-Light.woff') format('woff');
+  // src: url('../font/Helvetica-Light.woff2') format('woff2');
 }
