@@ -1,4 +1,4 @@
-const serverAddress = "222.109.124.51:8188";
+const serverAddress = "https://designpscz--example-comfyui-ui-dev.modal.run/";
 const clientId = uuidv4(); // 고유 클라이언트 ID 생성
 
 // JSON 캐싱을 위한 Map 객체 생성
