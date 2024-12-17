@@ -15,10 +15,10 @@ async function handleFormSubmit(event) {
     const workflowItems = document.querySelectorAll(".workflow_setting_item .btn_workflow_setting");
 
     const workflowPaths = [
-      "../../json/duct01_workflow_api.json", 
-      "../../json/illust01_workflow_api.json", 
-      "../../json/flux01_workflow_api.json",
-      "../../json/test_workflow_api.json"
+      "../json/duct01_workflow_api.json", 
+      "../json/illust01_workflow_api.json", 
+      "../json/flux01_workflow_api.json",
+      "../json/test_workflow_api.json"
     ];
     
     // active 클래스를 가진 첫 번째 항목을 찾기
@@ -124,8 +124,8 @@ async function loadPromptData(filePath) {
 function mergePromptData(basePromptData, userPrompt, jsonPath) {
   // 문장을 객체로 정의
   const promptAdditions = {
-    "../../json/duct01_workflow_api.json": "The model wears an oversized fleece jacket with an abstract swirl pattern in green and orange, featuring a high collar and an orange chest pocket as accent details. highlighting the model.",
-    "../../json/illust01_workflow_api.json": "Illustration of"
+    "../json/duct01_workflow_api.json": "The model wears an oversized fleece jacket with an abstract swirl pattern in green and orange, featuring a high collar and an orange chest pocket as accent details. highlighting the model.",
+    "../json/illust01_workflow_api.json": "Illustration of"
   };
 
   // jsonPath에 해당하는 문장이 있으면 userPrompt에 추가
