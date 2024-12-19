@@ -84,19 +84,11 @@
   }
 }
 
-.icon_close {
+.icon_prompt_setting_close {
   width: 24px;
   height: 24px;
   &::after {
-    background-image: url('../img/icon/icon_close.svg');
-  }
-}
-
-.icon_menu {
-  width: 24px;
-  height: 24px;
-  &::after {
-    background-image: url('../img/icon/icon_menu.svg');
+    background-image: url('../img/icon/icon_prompt_setting_close.svg');
   }
 }
 
